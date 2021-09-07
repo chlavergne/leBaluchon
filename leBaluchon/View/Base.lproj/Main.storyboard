@@ -16,11 +16,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Montant en Euro" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gqt-Xe-h9Q">
-                                <rect key="frame" x="94" y="182" width="227" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollars" translatesAutoresizingMaskIntoConstraints="NO" id="LQW-FU-cyl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qU-fP-BJq">
+                                <rect key="frame" x="274" y="204" width="49.5" height="34"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="EUR">
+                                        <attributes>
+                                            <font key="NSFont" size="24" name="Verdana"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Montant en Euro" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="gqt-Xe-h9Q">
+                                <rect key="frame" x="89" y="204" width="175" height="34"/>
                                 <color key="backgroundColor" red="0.93888634439999996" green="0.93534052369999998" blue="0.94315433500000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gqt-Xe-h9Q" secondAttribute="height" multiplier="175:34" id="nSu-2Y-2Nq"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="ZCj-kT-6h7" id="kLK-2U-Crw"/>
@@ -40,14 +58,15 @@
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dvx-Kt-k8g">
                                         <rect key="frame" x="220" y="0.0" width="154" height="216"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pickerView>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tU-Tk-HDa">
-                                <rect key="frame" x="0.0" y="64" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="70"/>
                                 <color key="backgroundColor" red="0.35851141950952375" green="0.72851083495442182" blue="0.87197135822925165" alpha="0.35999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Y3U-xz-Abd"/>
+                                    <constraint firstAttribute="height" constant="70" id="Y3U-xz-Abd"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Convertisseur  de devises">
@@ -65,12 +84,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="LQW-FU-cyl" secondAttribute="trailing" id="8bc-u6-Yt8"/>
                             <constraint firstItem="HL1-w1-hNl" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" constant="20" id="BO2-uZ-do1"/>
+                            <constraint firstItem="7qU-fP-BJq" firstAttribute="height" secondItem="gqt-Xe-h9Q" secondAttribute="height" id="EXv-Jf-khK"/>
+                            <constraint firstItem="7qU-fP-BJq" firstAttribute="leading" secondItem="gqt-Xe-h9Q" secondAttribute="trailing" constant="10" id="Hq2-ae-gpg"/>
+                            <constraint firstItem="LQW-FU-cyl" firstAttribute="top" secondItem="LDf-r5-awx" secondAttribute="top" id="IOc-H2-UBr"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="7tU-Tk-HDa" secondAttribute="trailing" id="LwI-37-Bei"/>
+                            <constraint firstItem="gqt-Xe-h9Q" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" constant="89" id="TCv-D4-PYp"/>
+                            <constraint firstItem="gqt-Xe-h9Q" firstAttribute="top" secondItem="7tU-Tk-HDa" secondAttribute="bottom" constant="70" id="Wkk-SL-F6s"/>
                             <constraint firstItem="7tU-Tk-HDa" firstAttribute="top" secondItem="LDf-r5-awx" secondAttribute="top" constant="20" id="WwU-LF-kbt"/>
                             <constraint firstItem="7tU-Tk-HDa" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" id="Zcs-Yv-8oN"/>
+                            <constraint firstItem="LDf-r5-awx" firstAttribute="bottom" secondItem="LQW-FU-cyl" secondAttribute="bottom" id="aYZ-Fi-n2s"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="HL1-w1-hNl" secondAttribute="trailing" constant="20" id="stW-Ns-W8n"/>
+                            <constraint firstItem="LQW-FU-cyl" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" id="uJG-sX-b03"/>
                             <constraint firstItem="HL1-w1-hNl" firstAttribute="centerY" secondItem="uQ8-5d-d6W" secondAttribute="centerY" id="xoc-LY-Xj9"/>
+                            <constraint firstItem="7qU-fP-BJq" firstAttribute="bottom" secondItem="gqt-Xe-h9Q" secondAttribute="bottom" id="yvN-dQ-6aV"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="zWp-2F-9o2" appends="YES" id="Qdu-Hw-EkT"/>
@@ -146,6 +174,7 @@
     </scenes>
     <resources>
         <image name="change" width="25" height="25"/>
+        <image name="dollars" width="2186" height="3279"/>
         <image name="translate" width="25" height="25"/>
         <image name="weathericon" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
