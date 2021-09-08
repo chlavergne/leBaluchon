@@ -16,11 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollars" translatesAutoresizingMaskIntoConstraints="NO" id="LQW-FU-cyl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollars" translatesAutoresizingMaskIntoConstraints="NO" id="LQW-FU-cyl">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qU-fP-BJq">
-                                <rect key="frame" x="274" y="204" width="49.5" height="34"/>
+                                <rect key="frame" x="303.5" y="204" width="49.5" height="39.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="EUR">
                                         <attributes>
@@ -32,13 +32,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Montant en Euro" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="gqt-Xe-h9Q">
-                                <rect key="frame" x="89" y="204" width="175" height="34"/>
+                                <rect key="frame" x="89" y="204" width="204.5" height="39.5"/>
                                 <color key="backgroundColor" red="0.93888634439999996" green="0.93534052369999998" blue="0.94315433500000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gqt-Xe-h9Q" secondAttribute="height" multiplier="175:34" id="nSu-2Y-2Nq"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="ZCj-kT-6h7" id="kLK-2U-Crw"/>
@@ -49,6 +49,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdY-qW-apN">
                                         <rect key="frame" x="0.0" y="83" width="220" height="50"/>
+                                        <color key="backgroundColor" red="0.93888634439999996" green="0.93534052369999998" blue="0.94315433500000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="220" id="L80-bE-6eU"/>
                                         </constraints>
@@ -71,7 +72,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Convertisseur  de devises">
                                         <attributes>
-                                            <font key="NSFont" size="24" name="BodoniSvtyTwoITCTT-Book"/>
+                                            <font key="NSFont" size="30" name="BodoniSvtyTwoITCTT-Book"/>
                                             <font key="NSOriginalFont" size="24" name="BodoniSvtyTwoITCTT-Book"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -160,6 +161,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.83227801320000006" green="0.93557173010000005" blue="0.99257820839999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="RUZ-fQ-iPD" kind="relationship" relationship="viewControllers" id="eKM-XB-XjC"/>
