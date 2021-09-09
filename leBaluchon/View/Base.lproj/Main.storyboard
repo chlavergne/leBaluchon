@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qU-fP-BJq">
-                                <rect key="frame" x="303.5" y="204" width="49.5" height="39.5"/>
+                                <rect key="frame" x="354.5" y="204" width="49.5" height="48.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="EUR">
                                         <attributes>
@@ -32,12 +32,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Montant en Euro" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="gqt-Xe-h9Q">
-                                <rect key="frame" x="89" y="204" width="204.5" height="39.5"/>
+                                <rect key="frame" x="89" y="204" width="250.5" height="48.5"/>
                                 <color key="backgroundColor" red="0.93888634439999996" green="0.93534052369999998" blue="0.94315433500000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gqt-Xe-h9Q" secondAttribute="height" multiplier="175:34" id="nSu-2Y-2Nq"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done"/>
                                 <connections>
@@ -80,22 +79,32 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="european-union" translatesAutoresizingMaskIntoConstraints="NO" id="std-qP-kZz">
+                                <rect key="frame" x="15" y="204" width="68" height="48.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="std-qP-kZz" secondAttribute="height" multiplier="67:48" id="fzk-6K-ea5"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LDf-r5-awx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="std-qP-kZz" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" constant="15" id="7Fz-E1-xqj"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="LQW-FU-cyl" secondAttribute="trailing" id="8bc-u6-Yt8"/>
                             <constraint firstItem="HL1-w1-hNl" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" constant="20" id="BO2-uZ-do1"/>
                             <constraint firstItem="7qU-fP-BJq" firstAttribute="height" secondItem="gqt-Xe-h9Q" secondAttribute="height" id="EXv-Jf-khK"/>
-                            <constraint firstItem="7qU-fP-BJq" firstAttribute="leading" secondItem="gqt-Xe-h9Q" secondAttribute="trailing" constant="10" id="Hq2-ae-gpg"/>
+                            <constraint firstItem="7qU-fP-BJq" firstAttribute="leading" secondItem="gqt-Xe-h9Q" secondAttribute="trailing" constant="15" id="Hq2-ae-gpg"/>
                             <constraint firstItem="LQW-FU-cyl" firstAttribute="top" secondItem="LDf-r5-awx" secondAttribute="top" id="IOc-H2-UBr"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="7tU-Tk-HDa" secondAttribute="trailing" id="LwI-37-Bei"/>
+                            <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="7qU-fP-BJq" secondAttribute="trailing" constant="10" id="T4t-tr-v4N"/>
                             <constraint firstItem="gqt-Xe-h9Q" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" constant="89" id="TCv-D4-PYp"/>
                             <constraint firstItem="gqt-Xe-h9Q" firstAttribute="top" secondItem="7tU-Tk-HDa" secondAttribute="bottom" constant="70" id="Wkk-SL-F6s"/>
                             <constraint firstItem="7tU-Tk-HDa" firstAttribute="top" secondItem="LDf-r5-awx" secondAttribute="top" constant="20" id="WwU-LF-kbt"/>
                             <constraint firstItem="7tU-Tk-HDa" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" id="Zcs-Yv-8oN"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="bottom" secondItem="LQW-FU-cyl" secondAttribute="bottom" id="aYZ-Fi-n2s"/>
+                            <constraint firstItem="gqt-Xe-h9Q" firstAttribute="bottom" secondItem="std-qP-kZz" secondAttribute="bottom" id="lW1-lQ-0zQ"/>
+                            <constraint firstItem="gqt-Xe-h9Q" firstAttribute="top" secondItem="std-qP-kZz" secondAttribute="top" id="lcp-jl-cth"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="HL1-w1-hNl" secondAttribute="trailing" constant="20" id="stW-Ns-W8n"/>
                             <constraint firstItem="LQW-FU-cyl" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" id="uJG-sX-b03"/>
                             <constraint firstItem="HL1-w1-hNl" firstAttribute="centerY" secondItem="uQ8-5d-d6W" secondAttribute="centerY" id="xoc-LY-Xj9"/>
@@ -177,6 +186,7 @@
     <resources>
         <image name="change" width="25" height="25"/>
         <image name="dollars" width="2186" height="3279"/>
+        <image name="european-union" width="511" height="335"/>
         <image name="translate" width="25" height="25"/>
         <image name="weathericon" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
