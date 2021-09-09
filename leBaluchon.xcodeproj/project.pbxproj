@@ -13,7 +13,7 @@
 		D5AFFA7726E28CA600A08505 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5AFFA7526E28CA600A08505 /* Main.storyboard */; };
 		D5AFFA7926E28CA700A08505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5AFFA7826E28CA700A08505 /* Assets.xcassets */; };
 		D5AFFA7C26E28CA700A08505 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5AFFA7A26E28CA700A08505 /* LaunchScreen.storyboard */; };
-		D5AFFA8726E51C8E00A08505 /* DeviseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFFA8626E51C8E00A08505 /* DeviseViewController.swift */; };
+		D5AFFA8726E51C8E00A08505 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFFA8626E51C8E00A08505 /* CurrencyViewController.swift */; };
 		D5AFFA8926E61C4A00A08505 /* ExchangeRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFFA8826E61C4A00A08505 /* ExchangeRates.swift */; };
 		D5AFFA9126E791CC00A08505 /* leBaluchonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFFA9026E791CC00A08505 /* leBaluchonTests.swift */; };
 		D5AFFA9926E7B9D200A08505 /* Devises.json in Resources */ = {isa = PBXBuildFile; fileRef = D5AFFA9826E7B9D200A08505 /* Devises.json */; };
@@ -39,7 +39,7 @@
 		D5AFFA7826E28CA700A08505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5AFFA7B26E28CA700A08505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5AFFA7D26E28CA700A08505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D5AFFA8626E51C8E00A08505 /* DeviseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviseViewController.swift; sourceTree = "<group>"; };
+		D5AFFA8626E51C8E00A08505 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		D5AFFA8826E61C4A00A08505 /* ExchangeRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRates.swift; sourceTree = "<group>"; };
 		D5AFFA8E26E791CC00A08505 /* leBaluchonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = leBaluchonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5AFFA9026E791CC00A08505 /* leBaluchonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leBaluchonTests.swift; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				D5AFFA7326E28CA600A08505 /* ViewController.swift */,
-				D5AFFA8626E51C8E00A08505 /* DeviseViewController.swift */,
+				D5AFFA8626E51C8E00A08505 /* CurrencyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -236,7 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5AFFA8726E51C8E00A08505 /* DeviseViewController.swift in Sources */,
+				D5AFFA8726E51C8E00A08505 /* CurrencyViewController.swift in Sources */,
 				D5AFFA7426E28CA600A08505 /* ViewController.swift in Sources */,
 				D5AFFA7026E28CA600A08505 /* AppDelegate.swift in Sources */,
 				D5AFFA8926E61C4A00A08505 /* ExchangeRates.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  DeviseViewController.swift
+//  CurrencyViewController.swift
 //  leBaluchon
 //
 //  Created by Christophe Expleo on 05/09/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DeviseViewController: UIViewController {
+class CurrencyViewController: UIViewController {
     
     // MARK: - Properties
     var currencyCode: [String] = []
@@ -53,8 +53,6 @@ class DeviseViewController: UIViewController {
         URLSession.shared.dataTask(with: url) { data, response, error in
             // handle any errors if there any
             if error != nil {
-//                self.presentAlert(with: "Download Error")
-//                return
                 print(error!)
             }
             // safely unwrap the data
@@ -75,7 +73,7 @@ class DeviseViewController: UIViewController {
 }
 
 // MARK: - PickerView
-extension DeviseViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension CurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -96,7 +94,7 @@ extension DeviseViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 // MARK: - Keyboard
-extension DeviseViewController: UITextFieldDelegate {
+extension CurrencyViewController: UITextFieldDelegate {
     @IBAction func dismissKeyboard(_ sender: Any) {
         textField.resignFirstResponder()
     }

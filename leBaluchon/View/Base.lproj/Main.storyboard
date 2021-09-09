@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Devise View Controller-->
+        <!--Currency View Controller-->
         <scene sceneID="Vh4-z9-Ez2">
             <objects>
-                <viewController id="ZCj-kT-6h7" customClass="DeviseViewController" customModule="leBaluchon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZCj-kT-6h7" customClass="CurrencyViewController" customModule="leBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uQ8-5d-d6W" userLabel="deviseView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
