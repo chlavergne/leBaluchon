@@ -29,17 +29,22 @@ class CurrencyViewController: UIViewController {
             self.useData(currencyData: currencyData!)
         }
         textField.addTarget(self, action: #selector(updateViews), for: .editingChanged)
+        textField.delegate = self
     }
     
-    @objc func updateViews(input: Double) {
-        guard let amountText = textField.text, let theAmountText = Double(amountText) else { presentAlert(with: "Veuillez saisir un nombre!")
+    @objc func updateViews() {
+        guard let amountText = textField.text, let theAmountText = Double(amountText) else {
             priceLabel.text = "0.0"
             return
         }
         if textField.text != "" {
-            let total = theAmountText * input
+            let total = theAmountText * activeCurrency
             priceLabel.text = String(format: "%.2f", total)
         }
+    }
+    
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        textField.resignFirstResponder()
     }
     
     // MARK: - Methods
@@ -50,8 +55,8 @@ class CurrencyViewController: UIViewController {
         pickerView.reloadAllComponents()
         let usd = currencyCode.firstIndex(of: "USD")
         pickerView.selectRow(usd!, inComponent: 0, animated:false)
-//        activeCurrency = values[pickerView.selectedRow(inComponent: 0)]
-//        updateViews(input: activeCurrency)
+        activeCurrency = values[pickerView.selectedRow(inComponent: 0)]
+        updateViews()
     }
     
     private func presentAlert(with error: String) {
@@ -79,16 +84,13 @@ extension CurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         activeCurrency = values[row]
-        updateViews(input: activeCurrency)
+        updateViews()
     }
 }
 
 // MARK: - Keyboard
 extension CurrencyViewController: UITextFieldDelegate {
-    @IBAction func dismissKeyboard(_ sender: Any) {
-        textField.resignFirstResponder()
-    }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
