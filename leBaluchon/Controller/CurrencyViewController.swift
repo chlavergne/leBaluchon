@@ -18,15 +18,16 @@ class CurrencyViewController: UIViewController {
     @IBOutlet var textField: UITextField!
     @IBOutlet var pickerView: UIPickerView!
     @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var date: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pickerView.delegate = self
         pickerView.dataSource = self
-        CurrencyService.shared.fetchJSON {(success, currrencyData) in
-            if success, let currencyData = currrencyData {
-                self.useData(currencyData: currencyData)} else {
+        CurrencyService.shared.fetchJSON {(success, currrencyData, timestamp) in
+            if success, let currencyData = currrencyData, let timestamp = timestamp {
+                self.useData(currencyData: currencyData, timestamp: timestamp)} else {
                     self.presentAlert(error: "Erreur de chargement")
                 }
         }
@@ -53,7 +54,7 @@ class CurrencyViewController: UIViewController {
     
     // MARK: - Methods
     
-    private func useData(currencyData: [String: Double]) {
+    private func useData(currencyData: [String: Double], timestamp: Double) {
         currencyCode.append(contentsOf: currencyData.keys)
         values.append(contentsOf: currencyData.values)
         pickerView.reloadAllComponents()
@@ -61,6 +62,8 @@ class CurrencyViewController: UIViewController {
         pickerView.selectRow(usd!, inComponent: 0, animated:false)
         activeCurrency = values[pickerView.selectedRow(inComponent: 0)]
         updateViews()
+        let dateInitial = Date(timeIntervalSince1970: TimeInterval(timestamp))
+        date.text = "Mise à jour le \(dateInitial)"
     }
     
     private func presentAlert(error: String) {

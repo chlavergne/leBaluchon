@@ -85,6 +85,12 @@
                                     <constraint firstAttribute="width" secondItem="std-qP-kZz" secondAttribute="height" multiplier="67:48" id="fzk-6K-ea5"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNK-Vx-Omh" userLabel="date">
+                                <rect key="frame" x="20" y="783" width="374" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LDf-r5-awx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -96,11 +102,14 @@
                             <constraint firstItem="7qU-fP-BJq" firstAttribute="height" secondItem="gqt-Xe-h9Q" secondAttribute="height" id="EXv-Jf-khK"/>
                             <constraint firstItem="7qU-fP-BJq" firstAttribute="leading" secondItem="gqt-Xe-h9Q" secondAttribute="trailing" constant="15" id="Hq2-ae-gpg"/>
                             <constraint firstItem="LQW-FU-cyl" firstAttribute="top" secondItem="LDf-r5-awx" secondAttribute="top" id="IOc-H2-UBr"/>
+                            <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="UNK-Vx-Omh" secondAttribute="trailing" constant="20" id="Kcs-XA-4NJ"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="7tU-Tk-HDa" secondAttribute="trailing" id="LwI-37-Bei"/>
+                            <constraint firstItem="LDf-r5-awx" firstAttribute="bottom" secondItem="UNK-Vx-Omh" secondAttribute="bottom" constant="30" id="Qbn-2u-JKf"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="7qU-fP-BJq" secondAttribute="trailing" constant="10" id="T4t-tr-v4N"/>
                             <constraint firstItem="gqt-Xe-h9Q" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" constant="89" id="TCv-D4-PYp"/>
                             <constraint firstItem="gqt-Xe-h9Q" firstAttribute="top" secondItem="7tU-Tk-HDa" secondAttribute="bottom" constant="70" id="Wkk-SL-F6s"/>
                             <constraint firstItem="7tU-Tk-HDa" firstAttribute="top" secondItem="LDf-r5-awx" secondAttribute="top" constant="20" id="WwU-LF-kbt"/>
+                            <constraint firstItem="UNK-Vx-Omh" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" constant="20" id="XRt-72-aSY"/>
                             <constraint firstItem="7tU-Tk-HDa" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" id="Zcs-Yv-8oN"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="bottom" secondItem="LQW-FU-cyl" secondAttribute="bottom" id="aYZ-Fi-n2s"/>
                             <constraint firstItem="gqt-Xe-h9Q" firstAttribute="bottom" secondItem="std-qP-kZz" secondAttribute="bottom" id="lW1-lQ-0zQ"/>
@@ -116,6 +125,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="change" id="UGf-UT-ZDd"/>
                     <connections>
+                        <outlet property="date" destination="UNK-Vx-Omh" id="c6g-TF-cLZ"/>
                         <outlet property="pickerView" destination="Dvx-Kt-k8g" id="Yxb-xS-g2r"/>
                         <outlet property="priceLabel" destination="QdY-qW-apN" id="YGV-Rd-Cat"/>
                         <outlet property="textField" destination="gqt-Xe-h9Q" id="xnm-AH-A2y"/>
