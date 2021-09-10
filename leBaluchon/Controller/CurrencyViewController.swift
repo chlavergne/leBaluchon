@@ -24,21 +24,25 @@ class CurrencyViewController: UIViewController {
         
         pickerView.delegate = self
         pickerView.dataSource = self
-        CurrencyService.shared.fetchJSON {(currrencyData) in
-            let currencyData = currrencyData
-            self.useData(currencyData: currencyData!)
+        CurrencyService.shared.fetchJSON {(success, currrencyData) in
+            if success, let currencyData = currrencyData {
+                self.useData(currencyData: currencyData)} else {
+                    self.presentAlert(error: "Erreur de chargement")
+                }
         }
         textField.addTarget(self, action: #selector(updateViews), for: .editingChanged)
         textField.delegate = self
     }
     
     @objc func updateViews() {
-        guard let amountText = textField.text, let theAmountText = Double(amountText) else {
+        guard let amountText = Double(textField.text!) else {
+            if textField.text != "" {self.presentAlert(error: "Veuillez entrer un nombre !")
             priceLabel.text = "0.0"
+            }
             return
         }
         if textField.text != "" {
-            let total = theAmountText * activeCurrency
+            let total = amountText * activeCurrency
             priceLabel.text = String(format: "%.2f", total)
         }
     }
@@ -59,7 +63,7 @@ class CurrencyViewController: UIViewController {
         updateViews()
     }
     
-    private func presentAlert(with error: String) {
+    private func presentAlert(error: String) {
         let alert = UIAlertController(title: "Erreur", message: error, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)

@@ -14,24 +14,24 @@ class CurrencyService {
     private static let exchangeUrl = URL(string: "http://data.fixer.io/api/latest")!
     private var task: URLSessionDataTask?
     
-    func fetchJSON(callback: @escaping ([String: Double]?) -> Void) {
+    func fetchJSON(callback: @escaping (Bool, [String: Double]?) -> Void) {
         let request = createCurrencyRequest()
         let session = URLSession(configuration: .default)
         task?.cancel()
         task = session.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
-                    callback(nil)
+                    callback(false, nil)
                     return
                 }
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {callback(nil)
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {callback(false, nil)
                     return}
                 guard let responseJSON = try? JSONDecoder().decode(ExchangeRates.self, from: data)  else {
-                    callback(nil)
+                    callback(false, nil)
                     return
                 }
                 let currencyData = responseJSON.rates
-                callback(currencyData)
+                callback(true, currencyData)
             }
         }
         task?.resume()
