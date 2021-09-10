@@ -11,26 +11,38 @@ class CurrencyService {
     
     static var shared = CurrencyService()
     
+    private static let exchangeUrl = URL(string: "http://data.fixer.io/api/latest")!
+    private var task: URLSessionDataTask?
+    
     func fetchJSON(callback: @escaping ([String: Double]?) -> Void) {
-        guard let url = URL(string: "http://data.fixer.io/api/latest?access_key=fbaa144280f40b3d007443ebae931f68&base=EUR&symbols=USD,CAD,CHF,CNY,BRL,GBP,RUB,AUD,DKK,HKD,IDR") else {return}
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            // handle any errors if there any
-            if error != nil {
-                print(error!)
-            }
-            // safely unwrap the data
-            guard let safeData = data else {return}
-            // decode the JSON
-            do {
-                let results = try JSONDecoder().decode(ExchangeRates.self, from: safeData)
-                DispatchQueue.main.async {
-                    let currencyData = results.rates
-                    callback(currencyData)
+        let request = createCurrencyRequest()
+        let session = URLSession(configuration: .default)
+        task?.cancel()
+        task = session.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                guard let data = data, error == nil else {
+                    callback(nil)
+                    return
                 }
-            } catch {
-                print(error)
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {callback(nil)
+                    return}
+                guard let responseJSON = try? JSONDecoder().decode(ExchangeRates.self, from: data)  else {
+                    callback(nil)
+                    return
+                }
+                let currencyData = responseJSON.rates
+                callback(currencyData)
             }
-        }.resume()
+        }
+        task?.resume()
+    }
+    
+    private func createCurrencyRequest() -> URLRequest {
+        var urlConponents = URLComponents(string: "http://data.fixer.io/api/latest")!
+        urlConponents.queryItems = [URLQueryItem(name: "access_key", value: "fbaa144280f40b3d007443ebae931f68")]
+        var request = URLRequest(url: urlConponents.url!)
+        request.httpMethod = "GET"
+        return request
     }
     
 }
