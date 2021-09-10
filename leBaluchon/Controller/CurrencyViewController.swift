@@ -10,7 +10,7 @@ import UIKit
 class CurrencyViewController: UIViewController {
     
     // MARK: - Properties
-    var currencyCode = ["USD","EUR","TEST"]
+    var currencyCode: [String] = []
     var values: [Double] = []
     var activeCurrency = 0.0
     
@@ -24,13 +24,11 @@ class CurrencyViewController: UIViewController {
         
         pickerView.delegate = self
         pickerView.dataSource = self
-        CurrencyService.shared.fetchJSON {(currencyCode, values) in
-          let currencyCode = currencyCode
-            self.pickerView.reloadAllComponents()
+        CurrencyService.shared.fetchJSON {(currrencyData) in
+            let currencyData = currrencyData
+            self.useData(currencyData: currencyData!)
         }
         textField.addTarget(self, action: #selector(updateViews), for: .editingChanged)
-        self.pickerView.selectRow(2, inComponent: 0, animated:true)
-//        pickerView(pickerView, didSelectRow: 1, inComponent: 0)
     }
     
     @objc func updateViews(input: Double) {
@@ -39,12 +37,22 @@ class CurrencyViewController: UIViewController {
             return
         }
         if textField.text != "" {
-            let total = theAmountText * activeCurrency
+            let total = theAmountText * input
             priceLabel.text = String(format: "%.2f", total)
         }
     }
     
     // MARK: - Methods
+    
+    private func useData(currencyData: [String: Double]) {
+        currencyCode.append(contentsOf: currencyData.keys)
+        values.append(contentsOf: currencyData.values)
+        pickerView.reloadAllComponents()
+        let usd = currencyCode.firstIndex(of: "USD")
+        pickerView.selectRow(usd!, inComponent: 0, animated:false)
+//        activeCurrency = values[pickerView.selectedRow(inComponent: 0)]
+//        updateViews(input: activeCurrency)
+    }
     
     private func presentAlert(with error: String) {
         let alert = UIAlertController(title: "Erreur", message: error, preferredStyle: .alert)
@@ -52,28 +60,6 @@ class CurrencyViewController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
-//    func fetchJSON() {
-//        guard let url = URL(string: "http://data.fixer.io/api/latest?access_key=fbaa144280f40b3d007443ebae931f68&base=EUR&symbols=USD,CAD,CHF,CNY,BRL,GBP,RUB,AUD,DKK,HKD,IDR") else {return}
-//        URLSession.shared.dataTask(with: url) { data, response, error in
-//            // handle any errors if there any
-//            if error != nil {
-//                print(error!)
-//            }
-//            // safely unwrap the data
-//            guard let safeData = data else {return}
-//            // decode the JSON
-//            do {
-//                let results = try JSONDecoder().decode(ExchangeRates.self, from: safeData)
-//                self.currencyCode.append(contentsOf: results.rates.keys)
-//                self.values.append(contentsOf: results.rates.values)
-//                DispatchQueue.main.async {
-//                    self.pickerView.reloadAllComponents()
-//                }
-//            } catch {
-//                print(error)
-//            }
-//        }.resume()
-//    }
 }
 
 // MARK: - PickerView
