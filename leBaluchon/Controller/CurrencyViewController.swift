@@ -13,12 +13,14 @@ class CurrencyViewController: UIViewController {
     var currencyCode: [String] = []
     var values: [Double] = []
     var activeCurrency = 0.0
+    var activeCode = ""
     
     // MARK: - IBOutlets
     @IBOutlet var textField: UITextField!
     @IBOutlet var pickerView: UIPickerView!
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var date: UILabel!
+    @IBOutlet var flagText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +40,7 @@ class CurrencyViewController: UIViewController {
     @objc func updateViews() {
         guard let amountText = Double(textField.text!) else {
             if textField.text != "" {self.presentAlert(error: "Veuillez entrer un nombre !")
-            priceLabel.text = "0.0"
+                priceLabel.text = "0.0"
             }
             return
         }
@@ -60,10 +62,12 @@ class CurrencyViewController: UIViewController {
         pickerView.reloadAllComponents()
         let usd = currencyCode.firstIndex(of: "USD")
         pickerView.selectRow(usd!, inComponent: 0, animated:false)
+        updateFlag(activeCode: "US")
         activeCurrency = values[pickerView.selectedRow(inComponent: 0)]
         updateViews()
         let dateInitial = Date(timeIntervalSince1970: TimeInterval(timestamp))
         date.text = "Mise à jour le \(dateInitial)"
+        
     }
     
     private func presentAlert(error: String) {
@@ -71,6 +75,19 @@ class CurrencyViewController: UIViewController {
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
+    }
+    
+    private func getFlag(from countryCode: String) -> String {
+        countryCode
+            .unicodeScalars
+            .map({ 127397 + $0.value })
+            .compactMap(UnicodeScalar.init)
+            .map(String.init)
+            .joined()
+    }
+    
+    @objc func updateFlag(activeCode: String) {
+        flagText.text = getFlag(from: activeCode)
     }
 }
 
@@ -91,13 +108,17 @@ extension CurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         activeCurrency = values[row]
+        activeCode = currencyCode[pickerView.selectedRow(inComponent: 0)]
+        var flagCode = activeCode
+        flagCode.removeLast()
+        updateFlag(activeCode: flagCode)
         updateViews()
     }
 }
 
 // MARK: - Keyboard
 extension CurrencyViewController: UITextFieldDelegate {
-
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
