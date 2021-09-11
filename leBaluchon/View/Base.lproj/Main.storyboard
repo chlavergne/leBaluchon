@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JGs-yq-X7l">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,14 +13,31 @@
             <objects>
                 <viewController id="ZCj-kT-6h7" customClass="CurrencyViewController" customModule="leBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uQ8-5d-d6W" userLabel="deviseView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dvx-Kt-k8g">
+                                <rect key="frame" x="314" y="340" width="85" height="216"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="ud5-a4-LXk"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdY-qW-apN">
+                                <rect key="frame" x="100" y="423" width="214" height="50"/>
+                                <color key="backgroundColor" red="0.35851141950952375" green="0.72851083495442182" blue="0.87197135822925165" alpha="0.35572744205298024" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="H6Y-iM-kYn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollars" translatesAutoresizingMaskIntoConstraints="NO" id="LQW-FU-cyl">
-                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qU-fP-BJq">
-                                <rect key="frame" x="275" y="204" width="85" height="50"/>
+                                <rect key="frame" x="314" y="204" width="85" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="c30-Jg-byi"/>
                                     <constraint firstAttribute="width" constant="85" id="s2Z-Yt-KeQ"/>
@@ -28,48 +45,48 @@
                                 <attributedString key="attributedText">
                                     <fragment content="EUR">
                                         <attributes>
-                                            <font key="NSFont" size="24" name="Verdana"/>
+                                            <font key="NSFont" size="26" name="Verdana"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="24"/>
+                                </variation>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HL1-w1-hNl">
-                                <rect key="frame" x="20" y="298" width="335" height="216"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdY-qW-apN">
-                                        <rect key="frame" x="0.0" y="83" width="220" height="50"/>
-                                        <color key="backgroundColor" red="0.93888634439999996" green="0.93534052369999998" blue="0.94315433500000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="220" id="L80-bE-6eU"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dvx-Kt-k8g">
-                                        <rect key="frame" x="220" y="0.0" width="115" height="216"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </pickerView>
-                                </subviews>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tU-Tk-HDa">
-                                <rect key="frame" x="0.0" y="64" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="70"/>
                                 <color key="backgroundColor" red="0.35851141950952375" green="0.72851083495442182" blue="0.87197135822925165" alpha="0.35999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Y3U-xz-Abd"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="Convertisseur  de devises">
+                                    <fragment content="Convertisseur">
                                         <attributes>
-                                            <font key="NSFont" size="30" name="BodoniSvtyTwoITCTT-Book"/>
+                                            <font key="NSFont" size="18" name="Verdana"/>
+                                            <font key="NSOriginalFont" size="24" name="BodoniSvtyTwoITCTT-Book"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="Verdana"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="de devises">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="Verdana"/>
                                             <font key="NSOriginalFont" size="24" name="BodoniSvtyTwoITCTT-Book"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="24"/>
+                                </variation>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="european-union" translatesAutoresizingMaskIntoConstraints="NO" id="std-qP-kZz">
                                 <rect key="frame" x="15" y="204" width="85" height="50"/>
@@ -78,20 +95,30 @@
                                     <constraint firstAttribute="width" constant="85" id="GrB-E7-CAV"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNK-Vx-Omh" userLabel="date">
-                                <rect key="frame" x="20" y="719" width="335" height="0.0"/>
-                                <attributedString key="attributedText"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNK-Vx-Omh" userLabel="date">
+                                <rect key="frame" x="20" y="781.5" width="374" height="21.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Date">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7B-8U-knD">
-                                <rect key="frame" x="85" y="535" width="245" height="171"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7B-8U-knD">
+                                <rect key="frame" x="15" y="423" width="85" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hcw-bf-fwm"/>
+                                    <constraint firstAttribute="width" constant="85" id="ztR-E8-XgZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="80"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Montant en Euro" textAlignment="right" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gqt-Xe-h9Q">
-                                <rect key="frame" x="100" y="204" width="175" height="50"/>
+                                <rect key="frame" x="100" y="204" width="214" height="50"/>
                                 <color key="backgroundColor" red="0.93888634439999996" green="0.93534052369999998" blue="0.94315433500000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="UB9-yE-JI5"/>
@@ -107,14 +134,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="Dvx-Kt-k8g" firstAttribute="leading" secondItem="QdY-qW-apN" secondAttribute="trailing" id="4Ou-L9-4yF"/>
                             <constraint firstItem="std-qP-kZz" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" constant="15" id="7Fz-E1-xqj"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="LQW-FU-cyl" secondAttribute="trailing" id="8bc-u6-Yt8"/>
-                            <constraint firstItem="HL1-w1-hNl" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" constant="20" id="BO2-uZ-do1"/>
+                            <constraint firstItem="Dvx-Kt-k8g" firstAttribute="centerY" secondItem="uQ8-5d-d6W" secondAttribute="centerY" id="9Dx-l8-sLs"/>
                             <constraint firstItem="7qU-fP-BJq" firstAttribute="top" secondItem="7tU-Tk-HDa" secondAttribute="bottom" constant="70" id="CBr-Jl-TM7"/>
                             <constraint firstItem="gqt-Xe-h9Q" firstAttribute="top" secondItem="7tU-Tk-HDa" secondAttribute="bottom" constant="70" id="CSc-Yb-4bj"/>
+                            <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="Dvx-Kt-k8g" secondAttribute="trailing" constant="15" id="Dtl-JA-aXy"/>
                             <constraint firstItem="LQW-FU-cyl" firstAttribute="top" secondItem="LDf-r5-awx" secondAttribute="top" id="IOc-H2-UBr"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="UNK-Vx-Omh" secondAttribute="trailing" constant="20" id="Kcs-XA-4NJ"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="7tU-Tk-HDa" secondAttribute="trailing" id="LwI-37-Bei"/>
+                            <constraint firstItem="p7B-8U-knD" firstAttribute="centerY" secondItem="uQ8-5d-d6W" secondAttribute="centerY" id="PM6-fq-uJ0"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="bottom" secondItem="UNK-Vx-Omh" secondAttribute="bottom" constant="10" id="Qbn-2u-JKf"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="7qU-fP-BJq" secondAttribute="trailing" constant="15" id="T4t-tr-v4N"/>
                             <constraint firstItem="7tU-Tk-HDa" firstAttribute="top" secondItem="LDf-r5-awx" secondAttribute="top" constant="20" id="WwU-LF-kbt"/>
@@ -122,10 +152,11 @@
                             <constraint firstItem="7qU-fP-BJq" firstAttribute="leading" secondItem="gqt-Xe-h9Q" secondAttribute="trailing" id="Z0R-Fe-2y2"/>
                             <constraint firstItem="7tU-Tk-HDa" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" id="Zcs-Yv-8oN"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="bottom" secondItem="LQW-FU-cyl" secondAttribute="bottom" id="aYZ-Fi-n2s"/>
+                            <constraint firstItem="p7B-8U-knD" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" constant="15" id="cwH-fc-81t"/>
+                            <constraint firstItem="QdY-qW-apN" firstAttribute="leading" secondItem="p7B-8U-knD" secondAttribute="trailing" id="k3E-J4-DOI"/>
                             <constraint firstItem="std-qP-kZz" firstAttribute="top" secondItem="7tU-Tk-HDa" secondAttribute="bottom" constant="70" id="sKm-3y-F29"/>
-                            <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="HL1-w1-hNl" secondAttribute="trailing" constant="20" id="stW-Ns-W8n"/>
                             <constraint firstItem="LQW-FU-cyl" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" id="uJG-sX-b03"/>
-                            <constraint firstItem="HL1-w1-hNl" firstAttribute="centerY" secondItem="uQ8-5d-d6W" secondAttribute="centerY" id="xoc-LY-Xj9"/>
+                            <constraint firstItem="QdY-qW-apN" firstAttribute="centerY" secondItem="uQ8-5d-d6W" secondAttribute="centerY" id="wwB-BR-Kdf"/>
                             <constraint firstItem="gqt-Xe-h9Q" firstAttribute="leading" secondItem="std-qP-kZz" secondAttribute="trailing" id="zcM-yt-91M"/>
                         </constraints>
                         <connections>
@@ -148,14 +179,14 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="553.62318840579712" y="-193.52678571428569"/>
+            <point key="canvasLocation" x="552.79999999999995" y="-193.5960591133005"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JYD-jc-gPY">
             <objects>
                 <viewController id="7Cv-j1-Pne" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oEU-ae-XwJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="a08-EB-Bw6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -171,7 +202,7 @@
             <objects>
                 <viewController id="RUZ-fQ-iPD" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b7g-mJ-0Y2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Hzd-f5-WAI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -204,11 +235,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="change" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="change" width="25" height="25"/>
         <image name="dollars" width="2186" height="3279"/>
         <image name="european-union" width="511" height="335"/>
-        <image name="translate" width="33.333332061767578" height="33.333332061767578"/>
-        <image name="weathericon" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="translate" width="25" height="25"/>
+        <image name="weathericon" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
