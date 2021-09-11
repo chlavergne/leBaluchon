@@ -129,6 +129,30 @@
                                     <outlet property="delegate" destination="ZCj-kT-6h7" id="kLK-2U-Crw"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZN-NL-mNM">
+                                <rect key="frame" x="22" y="478" width="292" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="7IL-T1-Vci">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="180"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="30" id="Jdt-zh-ckj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7IL-T1-Vci"/>
+                                        <exclude reference="Jdt-zh-ckj"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="7IL-T1-Vci"/>
+                                        <include reference="Jdt-zh-ckj"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LDf-r5-awx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -153,18 +177,51 @@
                             <constraint firstItem="7tU-Tk-HDa" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" id="Zcs-Yv-8oN"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="bottom" secondItem="LQW-FU-cyl" secondAttribute="bottom" id="aYZ-Fi-n2s"/>
                             <constraint firstItem="p7B-8U-knD" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" constant="15" id="cwH-fc-81t"/>
+                            <constraint firstItem="Dvx-Kt-k8g" firstAttribute="leading" secondItem="BZN-NL-mNM" secondAttribute="trailing" id="gn7-1V-8wh">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="QdY-qW-apN" firstAttribute="leading" secondItem="p7B-8U-knD" secondAttribute="trailing" id="k3E-J4-DOI"/>
+                            <constraint firstItem="BZN-NL-mNM" firstAttribute="top" secondItem="QdY-qW-apN" secondAttribute="bottom" constant="20" id="r5H-qj-50F">
+                                <variation key="heightClass=regular-widthClass=compact" constant="5"/>
+                            </constraint>
+                            <constraint firstItem="BZN-NL-mNM" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" constant="15" id="rte-yr-ai4">
+                                <variation key="heightClass=regular-widthClass=compact" constant="22"/>
+                            </constraint>
                             <constraint firstItem="std-qP-kZz" firstAttribute="top" secondItem="7tU-Tk-HDa" secondAttribute="bottom" constant="70" id="sKm-3y-F29"/>
                             <constraint firstItem="LQW-FU-cyl" firstAttribute="leading" secondItem="LDf-r5-awx" secondAttribute="leading" id="uJG-sX-b03"/>
                             <constraint firstItem="QdY-qW-apN" firstAttribute="centerY" secondItem="uQ8-5d-d6W" secondAttribute="centerY" id="wwB-BR-Kdf"/>
+                            <constraint firstItem="BZN-NL-mNM" firstAttribute="centerX" secondItem="uQ8-5d-d6W" secondAttribute="centerX" id="xg3-Zh-ztz"/>
                             <constraint firstItem="gqt-Xe-h9Q" firstAttribute="leading" secondItem="std-qP-kZz" secondAttribute="trailing" id="zcM-yt-91M"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="BZN-NL-mNM"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="gn7-1V-8wh"/>
+                                <exclude reference="r5H-qj-50F"/>
+                                <exclude reference="rte-yr-ai4"/>
+                                <exclude reference="xg3-Zh-ztz"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="BZN-NL-mNM"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="gn7-1V-8wh"/>
+                                <include reference="r5H-qj-50F"/>
+                                <include reference="rte-yr-ai4"/>
+                                <exclude reference="xg3-Zh-ztz"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="zWp-2F-9o2" appends="YES" id="Qdu-Hw-EkT"/>
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="change" id="UGf-UT-ZDd"/>
                     <connections>
+                        <outlet property="countryLabel" destination="BZN-NL-mNM" id="L4j-A5-fWh"/>
                         <outlet property="date" destination="UNK-Vx-Omh" id="c6g-TF-cLZ"/>
                         <outlet property="flagText" destination="p7B-8U-knD" id="ILR-mx-6YK"/>
                         <outlet property="pickerView" destination="Dvx-Kt-k8g" id="Yxb-xS-g2r"/>
@@ -222,6 +279,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.83227801320000006" green="0.93557173010000005" blue="0.99257820839999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="0.67845189569999997" green="0.42113944889999999" blue="0.59460103509999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="RUZ-fQ-iPD" kind="relationship" relationship="viewControllers" id="eKM-XB-XjC"/>

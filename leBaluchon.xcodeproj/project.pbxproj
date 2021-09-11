@@ -19,6 +19,7 @@
 		D5AFFA9926E7B9D200A08505 /* Devises.json in Resources */ = {isa = PBXBuildFile; fileRef = D5AFFA9826E7B9D200A08505 /* Devises.json */; };
 		D5AFFA9B26E7BA2600A08505 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFFA9A26E7BA2600A08505 /* FakeResponseData.swift */; };
 		D5AFFAA526EA8E3400A08505 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFFAA426EA8E3400A08505 /* CurrencyService.swift */; };
+		D5AFFAA726ED452B00A08505 /* CountryNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFFAA626ED452B00A08505 /* CountryNames.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		D5AFFA9826E7B9D200A08505 /* Devises.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Devises.json; sourceTree = "<group>"; };
 		D5AFFA9A26E7BA2600A08505 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
 		D5AFFAA426EA8E3400A08505 /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
+		D5AFFAA626ED452B00A08505 /* CountryNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryNames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			children = (
 				D5AFFA8826E61C4A00A08505 /* ExchangeRates.swift */,
 				D5AFFAA426EA8E3400A08505 /* CurrencyService.swift */,
+				D5AFFAA626ED452B00A08505 /* CountryNames.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				D5AFFA8726E51C8E00A08505 /* CurrencyViewController.swift in Sources */,
 				D5AFFA7426E28CA600A08505 /* ViewController.swift in Sources */,
 				D5AFFAA526EA8E3400A08505 /* CurrencyService.swift in Sources */,
+				D5AFFAA726ED452B00A08505 /* CountryNames.swift in Sources */,
 				D5AFFA7026E28CA600A08505 /* AppDelegate.swift in Sources */,
 				D5AFFA8926E61C4A00A08505 /* ExchangeRates.swift in Sources */,
 				D5AFFA7226E28CA600A08505 /* SceneDelegate.swift in Sources */,

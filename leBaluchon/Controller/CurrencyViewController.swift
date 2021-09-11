@@ -21,10 +21,10 @@ class CurrencyViewController: UIViewController {
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var date: UILabel!
     @IBOutlet var flagText: UILabel!
+    @IBOutlet var countryLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         pickerView.delegate = self
         pickerView.dataSource = self
         CurrencyService.shared.fetchJSON {(success, currrencyData, timestamp) in
@@ -62,12 +62,12 @@ class CurrencyViewController: UIViewController {
         pickerView.reloadAllComponents()
         let usd = currencyCode.firstIndex(of: "USD")
         pickerView.selectRow(usd!, inComponent: 0, animated:false)
-        updateFlag(activeCode: "US")
         activeCurrency = values[pickerView.selectedRow(inComponent: 0)]
         updateViews()
+        flagText.text = getFlag(from: "US")
+        countryLabel.text = CountryNames().codeToCountry["USD"]
         let dateInitial = Date(timeIntervalSince1970: TimeInterval(timestamp))
         date.text = "Mise à jour le \(dateInitial)"
-        
     }
     
     private func presentAlert(error: String) {
@@ -84,10 +84,6 @@ class CurrencyViewController: UIViewController {
             .compactMap(UnicodeScalar.init)
             .map(String.init)
             .joined()
-    }
-    
-    @objc func updateFlag(activeCode: String) {
-        flagText.text = getFlag(from: activeCode)
     }
 }
 
@@ -111,7 +107,8 @@ extension CurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         activeCode = currencyCode[pickerView.selectedRow(inComponent: 0)]
         var flagCode = activeCode
         flagCode.removeLast()
-        updateFlag(activeCode: flagCode)
+        flagText.text = getFlag(from: flagCode)
+        countryLabel.text = CountryNames().codeToCountry[activeCode]
         updateViews()
     }
 }
