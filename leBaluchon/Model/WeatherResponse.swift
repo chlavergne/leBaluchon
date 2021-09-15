@@ -10,7 +10,7 @@ import Foundation
 struct WeatherResponse: Decodable {
     let weather: [Weather]
     let main: Main
-    let name: String
+    let dt: Double
 }
 
 struct Weather: Decodable {

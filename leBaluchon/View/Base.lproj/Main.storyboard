@@ -325,9 +325,94 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" name="Color"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ans-Jq-Tb4" userLabel="temperatureLabel">
-                                <rect key="frame" x="231" y="376" width="163" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21°C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itg-RS-Hc6" userLabel="temperatureLabel">
+                                <rect key="frame" x="20" y="179" width="107" height="48.5"/>
+                                <nil key="textColor"/>
+                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="39"/>
+                                    <color key="textColor" name="LogoMeteoColor"/>
+                                </variation>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vRB-6n-pka" userLabel="conditionImageView">
+                                <rect key="frame" x="20" y="68.5" width="110" height="110.5"/>
+                                <color key="tintColor" name="LogoMeteoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="WH1-Mw-tjb">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="110"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="100" id="Z0h-FE-ifM">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="110"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WH1-Mw-tjb"/>
+                                        <exclude reference="Z0h-FE-ifM"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="WH1-Mw-tjb"/>
+                                        <include reference="Z0h-FE-ifM"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.sun.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PdW-Pi-ruV" userLabel="conditionImageView">
+                                <rect key="frame" x="284" y="234.5" width="112.5" height="109"/>
+                                <color key="tintColor" name="LogoMeteoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="AV4-1q-BaM"/>
+                                    <constraint firstAttribute="height" constant="110" id="xKr-hU-ObZ"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="AV4-1q-BaM"/>
+                                        <exclude reference="xKr-hU-ObZ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="AV4-1q-BaM"/>
+                                        <include reference="xKr-hU-ObZ"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New-York" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsy-6H-i0o">
+                                <rect key="frame" x="130" y="84" width="123" height="32"/>
+                                <color key="textColor" name="LogoMeteoColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="26"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloudy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxU-5h-qGp">
+                                <rect key="frame" x="170" y="294.5" width="72" height="26"/>
+                                <color key="textColor" name="LogoMeteoColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toulouse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGh-4Q-svT">
+                                <rect key="frame" x="170" y="262.5" width="114" height="32"/>
+                                <color key="textColor" name="LogoMeteoColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="26"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scM-Sm-TTG" userLabel="Weather Condition Ny">
+                                <rect key="frame" x="130" y="116" width="66.5" height="26"/>
+                                <color key="textColor" name="LogoMeteoColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ans-Jq-Tb4" userLabel="temperatureLabel">
+                                <rect key="frame" x="287" y="346" width="107" height="48.5"/>
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -342,115 +427,163 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vRB-6n-pka" userLabel="conditionImageView">
-                                <rect key="frame" x="20" y="85.5" width="130" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" name="LogoMeteoColor"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud.sun.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PdW-Pi-ruV" userLabel="conditionImageView">
-                                <rect key="frame" x="246" y="265.5" width="130" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" name="LogoMeteoColor"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New-York" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsy-6H-i0o">
-                                <rect key="frame" x="197" y="86" width="133" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" name="LogoMeteoColor"/>
-                                <nil key="highlightedColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2j-cZ-9C5" userLabel="date">
+                                <rect key="frame" x="20" y="781.5" width="374" height="21.5"/>
+                                <color key="textColor" name="tabBarColor"/>
+                                <color key="highlightedColor" systemColor="labelColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="26"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cloudy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxU-5h-qGp">
-                                <rect key="frame" x="84" y="376" width="187" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" name="LogoMeteoColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sunny" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scM-Sm-TTG" userLabel="Weather Condition Ny">
-                                <rect key="frame" x="197" y="122" width="120" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" name="LogoMeteoColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Toulouse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGh-4Q-svT">
-                                <rect key="frame" x="77" y="334" width="187" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" name="LogoMeteoColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="26"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="21°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itg-RS-Hc6" userLabel="temperatureLabel">
-                                <rect key="frame" x="6" y="210" width="158" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="39"/>
-                                    <color key="textColor" name="LogoMeteoColor"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                 </variation>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hzd-f5-WAI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Ans-Jq-Tb4" firstAttribute="top" secondItem="PdW-Pi-ruV" secondAttribute="bottom" id="1F7-jm-3Uz"/>
+                            <constraint firstItem="Hzd-f5-WAI" firstAttribute="trailing" secondItem="dsy-6H-i0o" secondAttribute="trailing" constant="110" id="2ep-NR-709"/>
+                            <constraint firstItem="Hzd-f5-WAI" firstAttribute="bottom" secondItem="N2j-cZ-9C5" secondAttribute="bottom" constant="10" id="3lG-vc-WLU"/>
+                            <constraint firstItem="Hzd-f5-WAI" firstAttribute="trailing" secondItem="Ans-Jq-Tb4" secondAttribute="trailing" constant="20" id="6sF-hy-Z6H"/>
+                            <constraint firstItem="vRB-6n-pka" firstAttribute="leading" secondItem="Hzd-f5-WAI" secondAttribute="leading" constant="20" id="8mi-Ki-a8i"/>
+                            <constraint firstItem="itg-RS-Hc6" firstAttribute="top" secondItem="vRB-6n-pka" secondAttribute="bottom" id="BXx-fU-CAJ"/>
+                            <constraint firstItem="Ans-Jq-Tb4" firstAttribute="trailing" secondItem="Hzd-f5-WAI" secondAttribute="trailing" constant="20" id="ChJ-Oh-qFb"/>
+                            <constraint firstItem="vxU-5h-qGp" firstAttribute="top" secondItem="cGh-4Q-svT" secondAttribute="bottom" id="Edj-jp-9cY"/>
+                            <constraint firstItem="vxU-5h-qGp" firstAttribute="leading" secondItem="cGh-4Q-svT" secondAttribute="leading" id="GVk-iY-qYO"/>
                             <constraint firstItem="FUu-ai-A1r" firstAttribute="top" secondItem="Hzd-f5-WAI" secondAttribute="top" id="Gtq-Us-aap"/>
+                            <constraint firstItem="N2j-cZ-9C5" firstAttribute="leading" secondItem="Hzd-f5-WAI" secondAttribute="leading" constant="20" id="I0D-Ot-dfE"/>
                             <constraint firstItem="Hzd-f5-WAI" firstAttribute="trailing" secondItem="FUu-ai-A1r" secondAttribute="trailing" id="Ivs-6i-bBq"/>
+                            <constraint firstItem="itg-RS-Hc6" firstAttribute="leading" secondItem="Hzd-f5-WAI" secondAttribute="leading" constant="20" id="JLZ-x8-x9v"/>
+                            <constraint firstItem="scM-Sm-TTG" firstAttribute="leading" secondItem="dsy-6H-i0o" secondAttribute="leading" id="KGH-mE-Pow"/>
+                            <constraint firstItem="dsy-6H-i0o" firstAttribute="top" secondItem="Hzd-f5-WAI" secondAttribute="top" constant="25" id="PVC-iM-55P">
+                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="Hzd-f5-WAI" firstAttribute="trailing" secondItem="PdW-Pi-ruV" secondAttribute="trailing" constant="20" id="Q0z-Ck-OEt"/>
+                            <constraint firstItem="vRB-6n-pka" firstAttribute="top" secondItem="Hzd-f5-WAI" secondAttribute="top" constant="25" id="QoY-Qy-CLZ"/>
+                            <constraint firstItem="scM-Sm-TTG" firstAttribute="top" secondItem="Hzd-f5-WAI" secondAttribute="top" constant="60" id="Wo1-DE-Gat"/>
+                            <constraint firstItem="cGh-4Q-svT" firstAttribute="leading" secondItem="Hzd-f5-WAI" secondAttribute="leading" constant="110" id="X7u-1x-AM5"/>
+                            <constraint firstItem="vxU-5h-qGp" firstAttribute="top" secondItem="cGh-4Q-svT" secondAttribute="bottom" id="aj2-pI-sz3"/>
+                            <constraint firstItem="itg-RS-Hc6" firstAttribute="top" secondItem="scM-Sm-TTG" secondAttribute="bottom" constant="35" id="c8z-7v-r1p"/>
+                            <constraint firstItem="itg-RS-Hc6" firstAttribute="centerX" secondItem="vRB-6n-pka" secondAttribute="centerX" id="cZh-fz-SwZ"/>
+                            <constraint firstItem="PdW-Pi-ruV" firstAttribute="leading" secondItem="cGh-4Q-svT" secondAttribute="trailing" id="flC-Rw-9Su"/>
+                            <constraint firstItem="Hzd-f5-WAI" firstAttribute="trailing" secondItem="N2j-cZ-9C5" secondAttribute="trailing" constant="20" id="g9E-hV-WOC"/>
                             <constraint firstItem="Hzd-f5-WAI" firstAttribute="bottom" secondItem="FUu-ai-A1r" secondAttribute="bottom" id="hZf-NQ-au8"/>
+                            <constraint firstItem="dsy-6H-i0o" firstAttribute="leading" secondItem="vRB-6n-pka" secondAttribute="trailing" constant="45" id="ids-On-bFP"/>
+                            <constraint firstItem="PdW-Pi-ruV" firstAttribute="top" secondItem="dsy-6H-i0o" secondAttribute="bottom" constant="120" id="k0r-Uw-WwN"/>
+                            <constraint firstItem="scM-Sm-TTG" firstAttribute="leading" secondItem="vRB-6n-pka" secondAttribute="trailing" constant="45" id="kLM-3Q-clD">
+                                <variation key="heightClass=regular-widthClass=compact" constant="44"/>
+                            </constraint>
+                            <constraint firstItem="vxU-5h-qGp" firstAttribute="top" secondItem="cGh-4Q-svT" secondAttribute="bottom" id="m1L-Qb-5ZT"/>
+                            <constraint firstItem="dsy-6H-i0o" firstAttribute="leading" secondItem="vRB-6n-pka" secondAttribute="trailing" id="pgU-l8-4bW"/>
+                            <constraint firstItem="scM-Sm-TTG" firstAttribute="top" secondItem="dsy-6H-i0o" secondAttribute="bottom" id="wRw-wB-thc"/>
+                            <constraint firstItem="itg-RS-Hc6" firstAttribute="leading" secondItem="Hzd-f5-WAI" secondAttribute="leading" constant="20" id="xpW-k6-RLm"/>
+                            <constraint firstItem="cGh-4Q-svT" firstAttribute="top" secondItem="itg-RS-Hc6" secondAttribute="bottom" constant="35" id="yLJ-6e-mz7"/>
                             <constraint firstItem="FUu-ai-A1r" firstAttribute="leading" secondItem="Hzd-f5-WAI" secondAttribute="leading" id="yTL-Sc-HXp"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="FUu-ai-A1r"/>
-                                <exclude reference="Ans-Jq-Tb4"/>
-                                <exclude reference="AWH-jh-gL8"/>
+                                <exclude reference="itg-RS-Hc6"/>
                                 <exclude reference="vRB-6n-pka"/>
                                 <exclude reference="PdW-Pi-ruV"/>
                                 <exclude reference="dsy-6H-i0o"/>
                                 <exclude reference="vxU-5h-qGp"/>
-                                <exclude reference="scM-Sm-TTG"/>
                                 <exclude reference="cGh-4Q-svT"/>
-                                <exclude reference="itg-RS-Hc6"/>
+                                <exclude reference="scM-Sm-TTG"/>
+                                <exclude reference="Ans-Jq-Tb4"/>
+                                <exclude reference="AWH-jh-gL8"/>
+                                <exclude reference="N2j-cZ-9C5"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Ivs-6i-bBq"/>
-                                <exclude reference="hZf-NQ-au8"/>
                                 <exclude reference="Gtq-Us-aap"/>
                                 <exclude reference="yTL-Sc-HXp"/>
+                                <exclude reference="2ep-NR-709"/>
+                                <exclude reference="3lG-vc-WLU"/>
+                                <exclude reference="6sF-hy-Z6H"/>
+                                <exclude reference="Ivs-6i-bBq"/>
+                                <exclude reference="Q0z-Ck-OEt"/>
+                                <exclude reference="g9E-hV-WOC"/>
+                                <exclude reference="hZf-NQ-au8"/>
+                                <exclude reference="8mi-Ki-a8i"/>
+                                <exclude reference="QoY-Qy-CLZ"/>
+                                <exclude reference="PVC-iM-55P"/>
+                                <exclude reference="ids-On-bFP"/>
+                                <exclude reference="pgU-l8-4bW"/>
+                                <exclude reference="KGH-mE-Pow"/>
+                                <exclude reference="Wo1-DE-Gat"/>
+                                <exclude reference="kLM-3Q-clD"/>
+                                <exclude reference="wRw-wB-thc"/>
+                                <exclude reference="BXx-fU-CAJ"/>
+                                <exclude reference="JLZ-x8-x9v"/>
+                                <exclude reference="c8z-7v-r1p"/>
+                                <exclude reference="cZh-fz-SwZ"/>
+                                <exclude reference="xpW-k6-RLm"/>
+                                <exclude reference="X7u-1x-AM5"/>
+                                <exclude reference="yLJ-6e-mz7"/>
+                                <exclude reference="Edj-jp-9cY"/>
+                                <exclude reference="GVk-iY-qYO"/>
+                                <exclude reference="aj2-pI-sz3"/>
+                                <exclude reference="m1L-Qb-5ZT"/>
+                                <exclude reference="flC-Rw-9Su"/>
+                                <exclude reference="k0r-Uw-WwN"/>
+                                <exclude reference="1F7-jm-3Uz"/>
+                                <exclude reference="ChJ-Oh-qFb"/>
+                                <exclude reference="I0D-Ot-dfE"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="FUu-ai-A1r"/>
-                                <include reference="Ans-Jq-Tb4"/>
-                                <exclude reference="AWH-jh-gL8"/>
+                                <include reference="itg-RS-Hc6"/>
                                 <include reference="vRB-6n-pka"/>
                                 <include reference="PdW-Pi-ruV"/>
                                 <include reference="dsy-6H-i0o"/>
                                 <include reference="vxU-5h-qGp"/>
-                                <include reference="scM-Sm-TTG"/>
                                 <include reference="cGh-4Q-svT"/>
-                                <include reference="itg-RS-Hc6"/>
+                                <include reference="scM-Sm-TTG"/>
+                                <include reference="Ans-Jq-Tb4"/>
+                                <exclude reference="AWH-jh-gL8"/>
+                                <include reference="N2j-cZ-9C5"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Ivs-6i-bBq"/>
-                                <include reference="hZf-NQ-au8"/>
                                 <include reference="Gtq-Us-aap"/>
                                 <include reference="yTL-Sc-HXp"/>
+                                <exclude reference="2ep-NR-709"/>
+                                <include reference="3lG-vc-WLU"/>
+                                <include reference="6sF-hy-Z6H"/>
+                                <include reference="Ivs-6i-bBq"/>
+                                <include reference="Q0z-Ck-OEt"/>
+                                <include reference="g9E-hV-WOC"/>
+                                <include reference="hZf-NQ-au8"/>
+                                <include reference="8mi-Ki-a8i"/>
+                                <include reference="QoY-Qy-CLZ"/>
+                                <include reference="PVC-iM-55P"/>
+                                <exclude reference="ids-On-bFP"/>
+                                <include reference="pgU-l8-4bW"/>
+                                <include reference="KGH-mE-Pow"/>
+                                <exclude reference="Wo1-DE-Gat"/>
+                                <exclude reference="kLM-3Q-clD"/>
+                                <include reference="wRw-wB-thc"/>
+                                <include reference="BXx-fU-CAJ"/>
+                                <include reference="JLZ-x8-x9v"/>
+                                <exclude reference="c8z-7v-r1p"/>
+                                <exclude reference="cZh-fz-SwZ"/>
+                                <exclude reference="xpW-k6-RLm"/>
+                                <exclude reference="X7u-1x-AM5"/>
+                                <include reference="yLJ-6e-mz7"/>
+                                <exclude reference="Edj-jp-9cY"/>
+                                <include reference="GVk-iY-qYO"/>
+                                <exclude reference="aj2-pI-sz3"/>
+                                <include reference="m1L-Qb-5ZT"/>
+                                <include reference="flC-Rw-9Su"/>
+                                <include reference="k0r-Uw-WwN"/>
+                                <include reference="1F7-jm-3Uz"/>
+                                <exclude reference="ChJ-Oh-qFb"/>
+                                <include reference="I0D-Ot-dfE"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="weathericon" id="zsA-zA-BJ9"/>
                     <connections>
+                        <outlet property="date" destination="N2j-cZ-9C5" id="QzL-jy-e67"/>
                         <outlet property="temperatureNy" destination="itg-RS-Hc6" id="Qux-zr-6OS"/>
                         <outlet property="temperatureTo" destination="Ans-Jq-Tb4" id="WN0-YN-cmG"/>
                         <outlet property="weatherConditionNy" destination="scM-Sm-TTG" id="afp-hI-QCG"/>

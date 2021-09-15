@@ -15,6 +15,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet var temperatureTo: UILabel!
     @IBOutlet var weatherConditionNy: UILabel!
     @IBOutlet var weatherConditionTo: UILabel!
+    @IBOutlet var date: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,8 @@ class WeatherViewController: UIViewController {
                 self.temperatureNy.text = "\(weather.temperatureString)°C"
                 self.weatherLogoNy.image = UIImage(systemName: weather.conditionName)
                 self.weatherConditionNy.text = weather.main
+                let dateInitial = Date(timeIntervalSince1970: TimeInterval(weather.date))
+                self.date.text = "Mise à jour le \(dateInitial)"
             } else {
                 self.presentAlert(error: "Erreur de chargement")
             }
