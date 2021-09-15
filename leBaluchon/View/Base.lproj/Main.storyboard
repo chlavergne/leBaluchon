@@ -65,7 +65,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Montant en Euro" textAlignment="right" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gqt-Xe-h9Q">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Montant en Euro" textAlignment="right" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gqt-Xe-h9Q">
                                 <rect key="frame" x="100" y="166" width="235" height="50"/>
                                 <color key="backgroundColor" name="texfieldBackground"/>
                                 <constraints>
@@ -313,10 +313,10 @@
             </objects>
             <point key="canvasLocation" x="-336" y="324"/>
         </scene>
-        <!--View Controller-->
+        <!--Weather View Controller-->
         <scene sceneID="Chi-mp-ZMt">
             <objects>
-                <viewController id="RUZ-fQ-iPD" sceneMemberID="viewController">
+                <viewController id="RUZ-fQ-iPD" customClass="WeatherViewController" customModule="leBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b7g-mJ-0Y2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -325,8 +325,8 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" name="Color"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="21°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itg-RS-Hc6" userLabel="temperatureLabel">
-                                <rect key="frame" x="20" y="223" width="130" height="59"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ans-Jq-Tb4" userLabel="temperatureLabel">
+                                <rect key="frame" x="231" y="376" width="163" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -342,18 +342,61 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sun.max" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vRB-6n-pka" userLabel="conditionImageView">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vRB-6n-pka" userLabel="conditionImageView">
                                 <rect key="frame" x="20" y="85.5" width="130" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="LogoMeteoColor"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud.sun.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PdW-Pi-ruV" userLabel="conditionImageView">
+                                <rect key="frame" x="246" y="265.5" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" name="LogoMeteoColor"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New-York" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsy-6H-i0o">
-                                <rect key="frame" x="184" y="122" width="187" height="56"/>
+                                <rect key="frame" x="197" y="86" width="133" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" name="LogoMeteoColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="26"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cloudy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxU-5h-qGp">
+                                <rect key="frame" x="84" y="376" width="187" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" name="LogoMeteoColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sunny" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scM-Sm-TTG" userLabel="Weather Condition Ny">
+                                <rect key="frame" x="197" y="122" width="120" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" name="LogoMeteoColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Toulouse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGh-4Q-svT">
+                                <rect key="frame" x="77" y="334" width="187" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" name="LogoMeteoColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="26"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="21°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itg-RS-Hc6" userLabel="temperatureLabel">
+                                <rect key="frame" x="6" y="210" width="158" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="39"/>
+                                    <color key="textColor" name="LogoMeteoColor"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -368,10 +411,15 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="FUu-ai-A1r"/>
-                                <exclude reference="itg-RS-Hc6"/>
+                                <exclude reference="Ans-Jq-Tb4"/>
                                 <exclude reference="AWH-jh-gL8"/>
                                 <exclude reference="vRB-6n-pka"/>
+                                <exclude reference="PdW-Pi-ruV"/>
                                 <exclude reference="dsy-6H-i0o"/>
+                                <exclude reference="vxU-5h-qGp"/>
+                                <exclude reference="scM-Sm-TTG"/>
+                                <exclude reference="cGh-4Q-svT"/>
+                                <exclude reference="itg-RS-Hc6"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Ivs-6i-bBq"/>
@@ -383,10 +431,15 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="FUu-ai-A1r"/>
-                                <include reference="itg-RS-Hc6"/>
+                                <include reference="Ans-Jq-Tb4"/>
                                 <exclude reference="AWH-jh-gL8"/>
                                 <include reference="vRB-6n-pka"/>
+                                <include reference="PdW-Pi-ruV"/>
                                 <include reference="dsy-6H-i0o"/>
+                                <include reference="vxU-5h-qGp"/>
+                                <include reference="scM-Sm-TTG"/>
+                                <include reference="cGh-4Q-svT"/>
+                                <include reference="itg-RS-Hc6"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Ivs-6i-bBq"/>
@@ -397,6 +450,14 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="weathericon" id="zsA-zA-BJ9"/>
+                    <connections>
+                        <outlet property="temperatureNy" destination="itg-RS-Hc6" id="Qux-zr-6OS"/>
+                        <outlet property="temperatureTo" destination="Ans-Jq-Tb4" id="WN0-YN-cmG"/>
+                        <outlet property="weatherConditionNy" destination="scM-Sm-TTG" id="afp-hI-QCG"/>
+                        <outlet property="weatherConditionTo" destination="vxU-5h-qGp" id="83h-Nj-QoN"/>
+                        <outlet property="weatherLogoNy" destination="vRB-6n-pka" id="J5p-Ed-Zfy"/>
+                        <outlet property="weatherLogoTo" destination="PdW-Pi-ruV" id="TI1-fN-kz0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Emf-9D-RF5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -434,8 +495,9 @@
         <image name="backgroundDayTranslator" width="250" height="500"/>
         <image name="backgroundWeather" width="250" height="500"/>
         <image name="change" width="25" height="25"/>
+        <image name="cloud.sun.fill" catalog="system" width="128" height="93"/>
         <image name="european-union" width="511" height="335"/>
-        <image name="sun.max" catalog="system" width="128" height="124"/>
+        <image name="sun.max.fill" catalog="system" width="128" height="124"/>
         <image name="translate" width="25" height="25"/>
         <image name="weathericon" width="25" height="25"/>
         <namedColor name="Color">

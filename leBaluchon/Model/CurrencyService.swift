@@ -11,7 +11,7 @@ class CurrencyService {
     
     static var shared = CurrencyService()
     
-    private static let exchangeUrl = URL(string: "http://data.fixer.io/api/latest")!
+//    private static let exchangeUrl = URL(string: "http://data.fixer.io/api/latest")!
     private var task: URLSessionDataTask?
     
     func fetchJSON(callback: @escaping (Bool, [String: Double]?, Double?) -> Void) {
