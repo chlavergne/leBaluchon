@@ -9,6 +9,7 @@ import UIKit
 
 class WeatherViewController: UIViewController {
     
+    // MARK: -IBOutlets
     @IBOutlet var weatherLogoNy: UIImageView!
     @IBOutlet var weatherLogoTo: UIImageView!
     @IBOutlet var temperatureNy: UILabel!
@@ -23,6 +24,7 @@ class WeatherViewController: UIViewController {
         weatherNy(city: "New York")
     }
     
+    //MARK: -Methods
     private func presentAlert(error: String) {
         let alert = UIAlertController(title: "Erreur", message: error, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
