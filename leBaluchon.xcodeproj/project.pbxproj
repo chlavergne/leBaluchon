@@ -27,6 +27,7 @@
 		D5AFFAD126F32DE900A08505 /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFFAD026F32DE900A08505 /* TranslateService.swift */; };
 		D5AFFAD326F32E2C00A08505 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFFAD226F32E2C00A08505 /* TranslateViewController.swift */; };
 		D5AFFAD526F363E600A08505 /* TranslateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFFAD426F363E600A08505 /* TranslateResponse.swift */; };
+		D5AFFAD826F4B25300A08505 /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFFAD726F4B25300A08505 /* UIViewController+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		D5AFFAD026F32DE900A08505 /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
 		D5AFFAD226F32E2C00A08505 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		D5AFFAD426F363E600A08505 /* TranslateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateResponse.swift; sourceTree = "<group>"; };
+		D5AFFAD726F4B25300A08505 /* UIViewController+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		D5AFFA6E26E28CA600A08505 /* leBaluchon */ = {
 			isa = PBXGroup;
 			children = (
+				D5AFFAD626F4B21D00A08505 /* Extensions */,
 				D5AFFA6F26E28CA600A08505 /* AppDelegate.swift */,
 				D5AFFA7126E28CA600A08505 /* SceneDelegate.swift */,
 				D5AFFA7D26E28CA700A08505 /* Info.plist */,
@@ -160,6 +163,14 @@
 				D5AFFA9A26E7BA2600A08505 /* FakeResponseData.swift */,
 			);
 			path = leBaluchonTests;
+			sourceTree = "<group>";
+		};
+		D5AFFAD626F4B21D00A08505 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D5AFFAD726F4B25300A08505 /* UIViewController+Additions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +282,7 @@
 				D5AFFA7426E28CA600A08505 /* ViewController.swift in Sources */,
 				D5AFFAA526EA8E3400A08505 /* CurrencyService.swift in Sources */,
 				D5AFFAA726ED452B00A08505 /* CountryNames.swift in Sources */,
+				D5AFFAD826F4B25300A08505 /* UIViewController+Additions.swift in Sources */,
 				D5AFFA7026E28CA600A08505 /* AppDelegate.swift in Sources */,
 				D5AFFAC926F0964600A08505 /* WeatherViewController.swift in Sources */,
 				D5AFFA8926E61C4A00A08505 /* ExchangeRates.swift in Sources */,

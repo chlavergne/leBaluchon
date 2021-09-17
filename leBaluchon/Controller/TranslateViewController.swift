@@ -48,13 +48,6 @@ class TranslateViewController: UIViewController {
             }
         }
     }
-    
-    private func presentAlert(error: String) {
-        let alert = UIAlertController(title: "Erreur", message: error, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
 }
 
 // MARK: - Extension

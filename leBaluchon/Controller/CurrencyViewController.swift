@@ -70,13 +70,6 @@ class CurrencyViewController: UIViewController {
         date.text = "Mise à jour le \(dateInitial)"
     }
     
-    private func presentAlert(error: String) {
-        let alert = UIAlertController(title: "Erreur", message: error, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
-    
     private func getFlag(from countryCode: String) -> String {
         countryCode
             .unicodeScalars
