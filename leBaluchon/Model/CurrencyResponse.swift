@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CurrencyResponse: Codable {
+struct CurrencyResponse: Decodable {
     let rates: [String: Double]
     let timestamp: Double
 }

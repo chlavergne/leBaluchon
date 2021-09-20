@@ -9,7 +9,7 @@ import Foundation
 
 class WeatherService {
     
-    var errorWeather = WeatherModel(conditionId: 1, date: 0, temperature: 0, main: "Error")
+    var errorWeather = WeatherModel(conditionId: 1, date: 0, temperature: 0, main: "Error", sunrise: 0, sunset: 0)
     
     static var shared = WeatherService()
     
@@ -34,8 +34,10 @@ class WeatherService {
                 let temp = responseJSON.main.temp
                 let date = responseJSON.dt
                 let main = responseJSON.weather[0].main
+                let sunrise = responseJSON.sys.sunrise
+                let sunset = responseJSON.sys.sunset
                 
-                let weather = WeatherModel(conditionId: id, date: date, temperature: temp, main: main)
+                let weather = WeatherModel(conditionId: id, date: date, temperature: temp, main: main, sunrise: sunrise, sunset: sunset)
                 callback(true, weather)
             }
         }

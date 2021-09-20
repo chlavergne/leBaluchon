@@ -12,6 +12,8 @@ struct WeatherModel {
     let date: Double
     let temperature: Double
     let main: String
+    let sunrise: Double
+    let sunset: Double
     
     var temperatureString: String {
         return String(format: "%.1f", temperature)
@@ -30,7 +32,10 @@ struct WeatherModel {
         case 701...781:
             return  "cloud.fog"
         case 800:
-            return  "sun.max"
+            if date < sunrise || date > sunset {
+                return "moon.stars"
+            } else {
+                return  "sun.max"}
         case 801...804:
             return  "cloud.bolt"
         default:
