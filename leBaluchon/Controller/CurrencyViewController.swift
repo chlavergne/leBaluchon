@@ -70,47 +70,12 @@ class CurrencyViewController: UIViewController {
         date.text = "Mise à jour le \(dateInitial)"
     }
     
-    private func getFlag(from countryCode: String) -> String {
+    func getFlag(from countryCode: String) -> String {
         countryCode
             .unicodeScalars
             .map({ 127397 + $0.value })
             .compactMap(UnicodeScalar.init)
             .map(String.init)
             .joined()
-    }
-}
-
-// MARK: - PickerView
-extension CurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return currencyCode.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return currencyCode[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        activeCurrency = values[row]
-        activeCode = currencyCode[pickerView.selectedRow(inComponent: 0)]
-        var flagCode = activeCode
-        flagCode.removeLast()
-        flagText.text = getFlag(from: flagCode)
-        countryLabel.text = CountryNames().codeToCountry[activeCode]
-        updateViews()
-    }
-}
-
-// MARK: - Keyboard
-extension CurrencyViewController: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }

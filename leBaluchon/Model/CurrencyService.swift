@@ -26,7 +26,7 @@ class CurrencyService {
                 }
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {callback(false, nil, 0)
                     return}
-                guard let responseJSON = try? JSONDecoder().decode(ExchangeRates.self, from: data)  else {
+                guard let responseJSON = try? JSONDecoder().decode(CurrencyResponse.self, from: data)  else {
                     callback(false, nil, 0)
                     return
                 }
@@ -40,7 +40,8 @@ class CurrencyService {
     
     private func createCurrencyRequest() -> URLRequest {
         var urlConponents = URLComponents(string: "http://data.fixer.io/api/latest")!
-        urlConponents.queryItems = [URLQueryItem(name: "access_key", value: "fbaa144280f40b3d007443ebae931f68")]
+        urlConponents.queryItems = [URLQueryItem(name: "access_key", value: "ab5d919e80c01ffa58db756efb99fe9f"),
+                                    URLQueryItem(name: "symbols", value: "AED, ARS, BOB, BRL, CHE, ZAR, USD, MXN, QAR")]
         var request = URLRequest(url: urlConponents.url!)
         request.httpMethod = "GET"
         return request

@@ -38,7 +38,7 @@ class TranslateViewController: UIViewController {
     }
     
     // MARK: -Methods
-    private func translateText() {
+    func translateText() {
         let TextToTranslate = frenchText.text!
         print(TextToTranslate)
         TranslateService.shared.fetchJSON(text: TextToTranslate) {(success, translation) in
@@ -50,25 +50,3 @@ class TranslateViewController: UIViewController {
     }
 }
 
-// MARK: - Extension
-
-extension TranslateViewController: UITextViewDelegate {
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        englishPlaceholder.placeholder = ""
-        translateText()
-        
-    }
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        frenchPlaceholder.placeholder = ""
-        
-    }
-    
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if(text == "\n") {
-            textView.resignFirstResponder()
-            return true
-        }
-        return true
-    }
-}
