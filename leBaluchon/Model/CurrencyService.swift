@@ -10,6 +10,7 @@ import Foundation
 class CurrencyService {
     
     // MARK: - Properties
+    let errorCurrency = CurrencyModel(currencyData: ["Error": 0.0], timestamp: 0)
     static var shared = CurrencyService()
     private init() {}
     
@@ -21,24 +22,25 @@ class CurrencyService {
     }
     
     // MARK: - Methods
-    func fetchJSON(callback: @escaping (Bool, [String: Double]?, Double?) -> Void) {
+    func fetchJSON(callback: @escaping (Bool, CurrencyModel) -> Void) {
         let request = createCurrencyRequest()
         task?.cancel()
         task = session.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
-                    callback(false, nil, nil)
+                    callback(false, self.errorCurrency)
                     return
                 }
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {callback(false, nil, nil)
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {callback(false, self.errorCurrency)
                     return}
                 guard let responseJSON = try? JSONDecoder().decode(CurrencyResponse.self, from: data)  else {
-                    callback(false, nil, nil)
+                    callback(false, self.errorCurrency)
                     return
                 }
                 let currencyData = responseJSON.rates
                 let timestamp = responseJSON.timestamp
-                callback(true, currencyData, timestamp)
+                let currency = CurrencyModel(currencyData: currencyData, timestamp: timestamp)
+                callback(true, currency)
             }
         }
         task?.resume()

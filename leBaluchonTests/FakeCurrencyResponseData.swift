@@ -25,7 +25,7 @@ class FakeCurrencyResponseData {
     
     static let responseKO = HTTPURLResponse(
         url: URL(string: "https://fixer.io")!,
-        statusCode: 404, httpVersion: nil, headerFields: [:])!
+        statusCode: 500, httpVersion: nil, headerFields: [:])!
     
     // MARK: - Error
     class DevisesError: Error {}

@@ -27,9 +27,9 @@ class CurrencyViewController: UIViewController {
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
-        CurrencyService.shared.fetchJSON {(success, currrencyData, timestamp) in
-            if success, let currencyData = currrencyData, let timestamp = timestamp {
-                self.useData(currencyData: currencyData, timestamp: timestamp)} else {
+        CurrencyService.shared.fetchJSON {(success, currency) in
+            if success {
+                self.useData(currency: currency)} else {
                     self.presentAlert(error: "Erreur de chargement")
                 }
         }
@@ -56,9 +56,9 @@ class CurrencyViewController: UIViewController {
         }
     }
     
-    private func useData(currencyData: [String: Double], timestamp: Double) {
-        currencyCode.append(contentsOf: currencyData.keys)
-        values.append(contentsOf: currencyData.values)
+    private func useData(currency: CurrencyModel) {
+        currencyCode.append(contentsOf: currency.currencyData.keys)
+        values.append(contentsOf: currency.currencyData.values)
         pickerView.reloadAllComponents()
         let usd = currencyCode.firstIndex(of: "USD")
         pickerView.selectRow(usd!, inComponent: 0, animated:false)
@@ -66,7 +66,7 @@ class CurrencyViewController: UIViewController {
         updateViews()
         flagText.text = getFlag(from: "US")
         countryLabel.text = CountryNames().codeToCountry["USD"]
-        let dateInitial = Date(timeIntervalSince1970: TimeInterval(timestamp))
+        let dateInitial = Date(timeIntervalSince1970: TimeInterval(currency.timestamp))
         date.text = "Mise à jour le \(dateInitial)"
     }
     

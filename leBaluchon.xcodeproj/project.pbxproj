@@ -30,6 +30,9 @@
 		D5AFFADA26F88A8C00A08505 /* Translation.json in Resources */ = {isa = PBXBuildFile; fileRef = D5AFFAD926F88A8C00A08505 /* Translation.json */; };
 		D5AFFADC26F88AE300A08505 /* FakeTranslateResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFFADB26F88AE300A08505 /* FakeTranslateResponseData.swift */; };
 		D5AFFADE26F8BA8300A08505 /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFFADD26F8BA8300A08505 /* URLSessionFake.swift */; };
+		D5D4C93326FCB0750037B3BC /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D4C93226FCB0750037B3BC /* CurrencyModel.swift */; };
+		D5D4C93526FCC7FE0037B3BC /* Weather.json in Resources */ = {isa = PBXBuildFile; fileRef = D5D4C93426FCC7FE0037B3BC /* Weather.json */; };
+		D5D4C93726FCC86E0037B3BC /* FakeWeatherResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D4C93626FCC86E0037B3BC /* FakeWeatherResponseData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		D5AFFAD926F88A8C00A08505 /* Translation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translation.json; sourceTree = "<group>"; };
 		D5AFFADB26F88AE300A08505 /* FakeTranslateResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTranslateResponseData.swift; sourceTree = "<group>"; };
 		D5AFFADD26F8BA8300A08505 /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
+		D5D4C93226FCB0750037B3BC /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
+		D5D4C93426FCC7FE0037B3BC /* Weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Weather.json; sourceTree = "<group>"; };
+		D5D4C93626FCC86E0037B3BC /* FakeWeatherResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeWeatherResponseData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 			children = (
 				D5AFFA8826E61C4A00A08505 /* CurrencyResponse.swift */,
 				D5AFFAA426EA8E3400A08505 /* CurrencyService.swift */,
+				D5D4C93226FCB0750037B3BC /* CurrencyModel.swift */,
 				D5AFFAA626ED452B00A08505 /* CountryNames.swift */,
 				D5AFFACA26F097C300A08505 /* WeatherService.swift */,
 				D5AFFACC26F0C7D900A08505 /* WeatherResponse.swift */,
@@ -163,8 +170,10 @@
 				D5AFFA9026E791CC00A08505 /* leBaluchonTests.swift */,
 				D5AFFA9826E7B9D200A08505 /* Devises.json */,
 				D5AFFAD926F88A8C00A08505 /* Translation.json */,
+				D5D4C93426FCC7FE0037B3BC /* Weather.json */,
 				D5AFFA9A26E7BA2600A08505 /* FakeCurrencyResponseData.swift */,
 				D5AFFADB26F88AE300A08505 /* FakeTranslateResponseData.swift */,
+				D5D4C93626FCC86E0037B3BC /* FakeWeatherResponseData.swift */,
 				D5AFFADD26F8BA8300A08505 /* URLSessionFake.swift */,
 				D5AFFA9226E791CC00A08505 /* Info.plist */,
 			);
@@ -270,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5AFFA9926E7B9D200A08505 /* Devises.json in Resources */,
+				D5D4C93526FCC7FE0037B3BC /* Weather.json in Resources */,
 				D5AFFADA26F88A8C00A08505 /* Translation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +296,7 @@
 				D5AFFA8726E51C8E00A08505 /* CurrencyViewController.swift in Sources */,
 				D5AFFACD26F0C7D900A08505 /* WeatherResponse.swift in Sources */,
 				D5AFFACB26F097C300A08505 /* WeatherService.swift in Sources */,
+				D5D4C93326FCB0750037B3BC /* CurrencyModel.swift in Sources */,
 				D5AFFAA526EA8E3400A08505 /* CurrencyService.swift in Sources */,
 				D5AFFAA726ED452B00A08505 /* CountryNames.swift in Sources */,
 				D5AFFAD826F4B25300A08505 /* UIViewController+Additions.swift in Sources */,
@@ -303,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5AFFA9126E791CC00A08505 /* leBaluchonTests.swift in Sources */,
+				D5D4C93726FCC86E0037B3BC /* FakeWeatherResponseData.swift in Sources */,
 				D5AFFADE26F8BA8300A08505 /* URLSessionFake.swift in Sources */,
 				D5AFFA9B26E7BA2600A08505 /* FakeCurrencyResponseData.swift in Sources */,
 				D5AFFADC26F88AE300A08505 /* FakeTranslateResponseData.swift in Sources */,

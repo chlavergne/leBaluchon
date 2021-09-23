@@ -480,8 +480,8 @@
                                     <color key="textColor" name="LogoMeteoColor"/>
                                 </variation>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vRB-6n-pka" userLabel="conditionImageViewNy">
-                                <rect key="frame" x="20" y="68.5" width="110" height="110.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vRB-6n-pka" userLabel="conditionImageViewNy">
+                                <rect key="frame" x="20" y="70.5" width="110" height="105.5"/>
                                 <color key="tintColor" name="LogoMeteoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="WH1-Mw-tjb">
@@ -504,8 +504,8 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.sun.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PdW-Pi-ruV" userLabel="conditionImageViewTo">
-                                <rect key="frame" x="284" y="235" width="111" height="109"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.sun" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PdW-Pi-ruV" userLabel="conditionImageViewTo">
+                                <rect key="frame" x="284" y="235.5" width="111" height="109"/>
                                 <color key="tintColor" name="LogoMeteoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="AV4-1q-BaM"/>
@@ -779,10 +779,10 @@
         <image name="backgroundDayTranslator" width="250" height="500"/>
         <image name="backgroundWeather" width="250" height="500"/>
         <image name="change" width="25" height="25"/>
-        <image name="cloud.sun.fill" catalog="system" width="128" height="95"/>
+        <image name="cloud" catalog="system" width="128" height="88"/>
+        <image name="cloud.sun" catalog="system" width="128" height="95"/>
         <image name="european-union" width="511" height="335"/>
         <image name="multiply.circle" catalog="system" width="128" height="121"/>
-        <image name="sun.max.fill" catalog="system" width="128" height="124"/>
         <image name="translate" width="25" height="25"/>
         <image name="weathericon" width="25" height="25"/>
         <namedColor name="Color">

@@ -21,6 +21,8 @@ struct WeatherModel {
     
     var conditionName: String {
         switch conditionId {
+        case 1:
+            return "multiply.circle"
         case 200...232:
             return "cloud.bolt"
         case 300...321:
