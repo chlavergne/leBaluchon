@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: - Extension UIViewController
 extension UIViewController {
     func presentAlert(error: String) {
         let alert = UIAlertController(title: "Erreur", message: error, preferredStyle: .alert)
@@ -16,31 +17,11 @@ extension UIViewController {
     }
 }
 
+// MARK: - Extensions CurrencyViewController
 extension CurrencyViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        return true
-    }
-}
-
-extension TranslateViewController: UITextViewDelegate {
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        englishPlaceholder.placeholder = ""
-        translateText()
-        
-    }
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        frenchPlaceholder.placeholder = ""
-        
-    }
-    
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if(text == "\n") {
-            textView.resignFirstResponder()
-            return true
-        }
         return true
     }
 }
@@ -67,5 +48,27 @@ extension CurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         flagText.text = getFlag(from: flagCode)
         countryLabel.text = CountryNames().codeToCountry[activeCode]
         updateViews()
+    }
+}
+
+// MARK: - Extension TranslateViewController
+extension TranslateViewController: UITextViewDelegate {
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        englishPlaceholder.placeholder = ""
+        translateText()
+        
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        frenchPlaceholder.placeholder = ""
+        
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return true
+        }
+        return true
     }
 }

@@ -7,16 +7,16 @@
 
 import Foundation
 
-class FakeResponseData {
+class FakeCurrencyResponseData {
     // MARK: - Data
-    static var DevisesCorrectData: Data? {
-        let bundle = Bundle(for: FakeResponseData.self)
+    static var CurrencyCorrectData: Data? {
+        let bundle = Bundle(for: FakeCurrencyResponseData.self)
         let url = bundle.url(forResource: "Devises", withExtension: "json")!
         let data = try! Data(contentsOf: url)
         return data
     }
     
-    static let DevisesIncorrectData = "erreur".data(using: .utf8)!
+    static let CurrencyIncorrectData = "erreur".data(using: .utf8)!
     
     // MARK: - Response
     static let responseOK = HTTPURLResponse(
@@ -25,7 +25,7 @@ class FakeResponseData {
     
     static let responseKO = HTTPURLResponse(
         url: URL(string: "https://fixer.io")!,
-        statusCode: 500, httpVersion: nil, headerFields: [:])!
+        statusCode: 404, httpVersion: nil, headerFields: [:])!
     
     // MARK: - Error
     class DevisesError: Error {}

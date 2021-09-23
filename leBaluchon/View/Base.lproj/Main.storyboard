@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JGs-yq-X7l">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JGs-yq-X7l">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -49,6 +50,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNK-Vx-Omh" userLabel="date">
                                 <rect key="frame" x="20" y="781.5" width="374" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="tabBarColor"/>
                                 <color key="highlightedColor" systemColor="labelColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -194,16 +196,16 @@
                                 <exclude reference="BZN-NL-mNM"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="8He-Bg-crb"/>
-                                <exclude reference="fUY-JA-W3g"/>
-                                <exclude reference="guN-Ff-Lm8"/>
-                                <exclude reference="FDK-HL-6eO"/>
-                                <exclude reference="rXa-Vj-NJD"/>
                                 <exclude reference="fKK-OX-6Ax"/>
                                 <exclude reference="r5H-qj-50F"/>
                                 <exclude reference="rte-yr-ai4"/>
                                 <exclude reference="wXN-ab-sD1"/>
                                 <exclude reference="xg3-Zh-ztz"/>
+                                <exclude reference="8He-Bg-crb"/>
+                                <exclude reference="fUY-JA-W3g"/>
+                                <exclude reference="guN-Ff-Lm8"/>
+                                <exclude reference="FDK-HL-6eO"/>
+                                <exclude reference="rXa-Vj-NJD"/>
                                 <exclude reference="Sjy-lv-fpu"/>
                                 <exclude reference="lgn-sO-jOZ"/>
                                 <exclude reference="uXW-7B-brC"/>
@@ -217,6 +219,11 @@
                                 <include reference="BZN-NL-mNM"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="fKK-OX-6Ax"/>
+                                <exclude reference="r5H-qj-50F"/>
+                                <exclude reference="rte-yr-ai4"/>
+                                <include reference="wXN-ab-sD1"/>
+                                <exclude reference="xg3-Zh-ztz"/>
                                 <exclude reference="Dtl-JA-aXy"/>
                                 <include reference="8He-Bg-crb"/>
                                 <include reference="fUY-JA-W3g"/>
@@ -226,11 +233,6 @@
                                 <exclude reference="PM6-fq-uJ0"/>
                                 <include reference="rXa-Vj-NJD"/>
                                 <exclude reference="wwB-BR-Kdf"/>
-                                <include reference="fKK-OX-6Ax"/>
-                                <exclude reference="r5H-qj-50F"/>
-                                <exclude reference="rte-yr-ai4"/>
-                                <include reference="wXN-ab-sD1"/>
-                                <exclude reference="xg3-Zh-ztz"/>
                                 <include reference="Sjy-lv-fpu"/>
                                 <exclude reference="Z0R-Fe-2y2"/>
                                 <include reference="lgn-sO-jOZ"/>
@@ -282,6 +284,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="BUQ-D9-MxF"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -301,6 +304,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="rhx-vu-10q"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -345,7 +349,6 @@
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tapez un texte à traduire (Français)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bhI-ua-1fB">
                                 <rect key="frame" x="62.5" y="183.5" width="289" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -387,22 +390,22 @@
                                 <exclude reference="LIl-tl-ln2"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="8vN-Jp-5vh"/>
+                                <exclude reference="fPR-zx-OLc"/>
+                                <exclude reference="WzV-Dv-p20"/>
+                                <exclude reference="hji-qz-oCY"/>
+                                <exclude reference="hEg-6a-NP4"/>
+                                <exclude reference="mwz-wO-MvW"/>
+                                <exclude reference="Ema-xf-OcQ"/>
+                                <exclude reference="XHU-zU-PpQ"/>
+                                <exclude reference="eKh-Zf-VrS"/>
+                                <exclude reference="sBp-Qg-Vjs"/>
                                 <exclude reference="Nqf-yu-1hc"/>
                                 <exclude reference="pIJ-Z8-XVz"/>
                                 <exclude reference="3FU-3u-Esy"/>
                                 <exclude reference="43y-p0-ynl"/>
                                 <exclude reference="Ssh-pe-QG1"/>
                                 <exclude reference="suc-D1-CTC"/>
-                                <exclude reference="WzV-Dv-p20"/>
-                                <exclude reference="hji-qz-oCY"/>
-                                <exclude reference="8vN-Jp-5vh"/>
-                                <exclude reference="fPR-zx-OLc"/>
-                                <exclude reference="hEg-6a-NP4"/>
-                                <exclude reference="mwz-wO-MvW"/>
-                                <exclude reference="eKh-Zf-VrS"/>
-                                <exclude reference="sBp-Qg-Vjs"/>
-                                <exclude reference="Ema-xf-OcQ"/>
-                                <exclude reference="XHU-zU-PpQ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -415,22 +418,22 @@
                                 <include reference="LIl-tl-ln2"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="8vN-Jp-5vh"/>
+                                <include reference="fPR-zx-OLc"/>
+                                <include reference="WzV-Dv-p20"/>
+                                <include reference="hji-qz-oCY"/>
+                                <include reference="hEg-6a-NP4"/>
+                                <include reference="mwz-wO-MvW"/>
+                                <include reference="Ema-xf-OcQ"/>
+                                <include reference="XHU-zU-PpQ"/>
+                                <include reference="eKh-Zf-VrS"/>
+                                <include reference="sBp-Qg-Vjs"/>
                                 <include reference="Nqf-yu-1hc"/>
                                 <include reference="pIJ-Z8-XVz"/>
                                 <include reference="3FU-3u-Esy"/>
                                 <include reference="43y-p0-ynl"/>
                                 <include reference="Ssh-pe-QG1"/>
                                 <include reference="suc-D1-CTC"/>
-                                <include reference="WzV-Dv-p20"/>
-                                <include reference="hji-qz-oCY"/>
-                                <include reference="8vN-Jp-5vh"/>
-                                <include reference="fPR-zx-OLc"/>
-                                <include reference="hEg-6a-NP4"/>
-                                <include reference="mwz-wO-MvW"/>
-                                <include reference="eKh-Zf-VrS"/>
-                                <include reference="sBp-Qg-Vjs"/>
-                                <include reference="Ema-xf-OcQ"/>
-                                <include reference="XHU-zU-PpQ"/>
                             </mask>
                         </variation>
                         <connections>
@@ -468,6 +471,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21°C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itg-RS-Hc6" userLabel="temperatureLabelNy">
                                 <rect key="frame" x="20" y="179" width="107" height="48.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -501,7 +505,7 @@
                                 </variation>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.sun.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PdW-Pi-ruV" userLabel="conditionImageViewTo">
-                                <rect key="frame" x="284" y="234.5" width="112.5" height="109"/>
+                                <rect key="frame" x="284" y="235" width="111" height="109"/>
                                 <color key="tintColor" name="LogoMeteoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="AV4-1q-BaM"/>
@@ -522,6 +526,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New-York" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsy-6H-i0o">
                                 <rect key="frame" x="130" y="84" width="123" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="LogoMeteoColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -530,6 +535,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloudy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxU-5h-qGp" userLabel="Weather ConditionTo">
                                 <rect key="frame" x="170" y="294.5" width="72" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="LogoMeteoColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -538,6 +544,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toulouse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGh-4Q-svT">
                                 <rect key="frame" x="170" y="262.5" width="114" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="LogoMeteoColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -546,6 +553,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scM-Sm-TTG" userLabel="Weather ConditionNy">
                                 <rect key="frame" x="130" y="116" width="66.5" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="LogoMeteoColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -554,6 +562,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ans-Jq-Tb4" userLabel="temperatureLabelTo">
                                 <rect key="frame" x="287" y="346" width="107" height="48.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -570,6 +579,7 @@
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2j-cZ-9C5" userLabel="date">
                                 <rect key="frame" x="20" y="781.5" width="374" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="tabBarColor"/>
                                 <color key="highlightedColor" systemColor="labelColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -634,20 +644,11 @@
                                 <exclude reference="N2j-cZ-9C5"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Gtq-Us-aap"/>
-                                <exclude reference="yTL-Sc-HXp"/>
-                                <exclude reference="2ep-NR-709"/>
-                                <exclude reference="3lG-vc-WLU"/>
-                                <exclude reference="6sF-hy-Z6H"/>
-                                <exclude reference="Ivs-6i-bBq"/>
-                                <exclude reference="Q0z-Ck-OEt"/>
-                                <exclude reference="g9E-hV-WOC"/>
-                                <exclude reference="hZf-NQ-au8"/>
-                                <exclude reference="8mi-Ki-a8i"/>
-                                <exclude reference="QoY-Qy-CLZ"/>
                                 <exclude reference="PVC-iM-55P"/>
                                 <exclude reference="ids-On-bFP"/>
                                 <exclude reference="pgU-l8-4bW"/>
+                                <exclude reference="8mi-Ki-a8i"/>
+                                <exclude reference="QoY-Qy-CLZ"/>
                                 <exclude reference="KGH-mE-Pow"/>
                                 <exclude reference="Wo1-DE-Gat"/>
                                 <exclude reference="kLM-3Q-clD"/>
@@ -668,6 +669,15 @@
                                 <exclude reference="1F7-jm-3Uz"/>
                                 <exclude reference="ChJ-Oh-qFb"/>
                                 <exclude reference="I0D-Ot-dfE"/>
+                                <exclude reference="Gtq-Us-aap"/>
+                                <exclude reference="yTL-Sc-HXp"/>
+                                <exclude reference="2ep-NR-709"/>
+                                <exclude reference="3lG-vc-WLU"/>
+                                <exclude reference="6sF-hy-Z6H"/>
+                                <exclude reference="Ivs-6i-bBq"/>
+                                <exclude reference="Q0z-Ck-OEt"/>
+                                <exclude reference="g9E-hV-WOC"/>
+                                <exclude reference="hZf-NQ-au8"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -685,20 +695,11 @@
                                 <include reference="N2j-cZ-9C5"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Gtq-Us-aap"/>
-                                <include reference="yTL-Sc-HXp"/>
-                                <exclude reference="2ep-NR-709"/>
-                                <include reference="3lG-vc-WLU"/>
-                                <include reference="6sF-hy-Z6H"/>
-                                <include reference="Ivs-6i-bBq"/>
-                                <include reference="Q0z-Ck-OEt"/>
-                                <include reference="g9E-hV-WOC"/>
-                                <include reference="hZf-NQ-au8"/>
-                                <include reference="8mi-Ki-a8i"/>
-                                <include reference="QoY-Qy-CLZ"/>
                                 <include reference="PVC-iM-55P"/>
                                 <exclude reference="ids-On-bFP"/>
                                 <include reference="pgU-l8-4bW"/>
+                                <include reference="8mi-Ki-a8i"/>
+                                <include reference="QoY-Qy-CLZ"/>
                                 <include reference="KGH-mE-Pow"/>
                                 <exclude reference="Wo1-DE-Gat"/>
                                 <exclude reference="kLM-3Q-clD"/>
@@ -719,6 +720,15 @@
                                 <include reference="1F7-jm-3Uz"/>
                                 <exclude reference="ChJ-Oh-qFb"/>
                                 <include reference="I0D-Ot-dfE"/>
+                                <include reference="Gtq-Us-aap"/>
+                                <include reference="yTL-Sc-HXp"/>
+                                <exclude reference="2ep-NR-709"/>
+                                <include reference="3lG-vc-WLU"/>
+                                <include reference="6sF-hy-Z6H"/>
+                                <include reference="Ivs-6i-bBq"/>
+                                <include reference="Q0z-Ck-OEt"/>
+                                <include reference="g9E-hV-WOC"/>
+                                <include reference="hZf-NQ-au8"/>
                             </mask>
                         </variation>
                     </view>
@@ -769,7 +779,7 @@
         <image name="backgroundDayTranslator" width="250" height="500"/>
         <image name="backgroundWeather" width="250" height="500"/>
         <image name="change" width="25" height="25"/>
-        <image name="cloud.sun.fill" catalog="system" width="128" height="93"/>
+        <image name="cloud.sun.fill" catalog="system" width="128" height="95"/>
         <image name="european-union" width="511" height="335"/>
         <image name="multiply.circle" catalog="system" width="128" height="121"/>
         <image name="sun.max.fill" catalog="system" width="128" height="124"/>
@@ -779,19 +789,19 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="LogoMeteoColor">
-            <color red="0.052077837289999998" green="0.31681847569999999" blue="0.27709203960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.052000001072883606" green="0.31700000166893005" blue="0.27700001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="selectedIconTabBar">
-            <color red="0.40831983090000001" green="0.76497137550000005" blue="0.72512799500000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.40799999237060547" green="0.76499998569488525" blue="0.72500002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="tabBarColor">
-            <color red="0.86836725469999998" green="0.96304100749999999" blue="0.99173301459999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.86799997091293335" green="0.96299999952316284" blue="0.99199998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="texfieldBackground">
-            <color red="0.7577778101" green="0.93604689839999999" blue="0.91169852019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.75800001621246338" green="0.93599998950958252" blue="0.91200000047683716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="unselectedIconTabBar">
-            <color red="0.052077837289999998" green="0.31681847569999999" blue="0.27709203960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.052000001072883606" green="0.31700000166893005" blue="0.27700001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

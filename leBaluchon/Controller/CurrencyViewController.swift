@@ -37,6 +37,12 @@ class CurrencyViewController: UIViewController {
         textField.delegate = self
     }
     
+    // MARK: - IBAction
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        textField.resignFirstResponder()
+    }
+    
+    // MARK: - Methods
     @objc func updateViews() {
         guard let amountText = Double(textField.text!) else {
             if textField.text != "" {self.presentAlert(error: "Veuillez entrer un nombre !")
@@ -49,12 +55,6 @@ class CurrencyViewController: UIViewController {
             priceLabel.text = String(format: "%.2f", total)
         }
     }
-    
-    @IBAction func dismissKeyboard(_ sender: Any) {
-        textField.resignFirstResponder()
-    }
-    
-    // MARK: - Methods
     
     private func useData(currencyData: [String: Double], timestamp: Double) {
         currencyCode.append(contentsOf: currencyData.keys)

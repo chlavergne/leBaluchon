@@ -39,9 +39,8 @@ class TranslateViewController: UIViewController {
     
     // MARK: -Methods
     func translateText() {
-        let TextToTranslate = frenchText.text!
-        print(TextToTranslate)
-        TranslateService.shared.fetchJSON(text: TextToTranslate) {(success, translation) in
+        let textToTranslate = frenchText.text!
+        TranslateService.shared.fetchJSON(text: textToTranslate) {(success, translation) in
             if success {self.englishText.text = translation} else {
                 print(translation)
                 self.presentAlert(error: "Erreur de chargement")

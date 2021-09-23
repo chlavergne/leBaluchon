@@ -9,12 +9,12 @@ import Foundation
 
 class WeatherService {
     
+    // MARK: - Properties
     var errorWeather = WeatherModel(conditionId: 1, date: 0, temperature: 0, main: "Error", sunrise: 0, sunset: 0)
-    
     static var shared = WeatherService()
-    
     private var task: URLSessionDataTask?
     
+    // MARK: - Methods
     func fetchJSON(city: String, callback: @escaping (Bool, WeatherModel) -> Void) {
         let request = createWeatherRequest(city: city)
         let session = URLSession(configuration: .default)

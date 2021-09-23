@@ -9,25 +9,31 @@ import Foundation
 
 class CurrencyService {
     
+    // MARK: - Properties
     static var shared = CurrencyService()
+    private init() {}
     
-//    private static let exchangeUrl = URL(string: "http://data.fixer.io/api/latest")!
     private var task: URLSessionDataTask?
+    private var session = URLSession(configuration: .default)
     
+    init(session: URLSession) {
+        self.session  = session
+    }
+    
+    // MARK: - Methods
     func fetchJSON(callback: @escaping (Bool, [String: Double]?, Double?) -> Void) {
         let request = createCurrencyRequest()
-        let session = URLSession(configuration: .default)
         task?.cancel()
         task = session.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
-                    callback(false, nil, 0)
+                    callback(false, nil, nil)
                     return
                 }
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {callback(false, nil, 0)
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {callback(false, nil, nil)
                     return}
                 guard let responseJSON = try? JSONDecoder().decode(CurrencyResponse.self, from: data)  else {
-                    callback(false, nil, 0)
+                    callback(false, nil, nil)
                     return
                 }
                 let currencyData = responseJSON.rates

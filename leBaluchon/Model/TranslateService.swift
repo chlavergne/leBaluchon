@@ -9,10 +9,9 @@ import Foundation
 
 class TranslateService {
     
+    // MARK: - Properties
     static var shared = TranslateService()
-    private init() {
-        
-    }
+    private init() {}
     
     private var task: URLSessionDataTask?
     private var session = URLSession(configuration: .default)
@@ -21,6 +20,7 @@ class TranslateService {
         self.session = session
     }
     
+    // MARK: - Methods
     func fetchJSON(text: String, callback: @escaping (Bool, String) -> Void) {
         let request = createTranslateRequest(text: text)
         task = session.dataTask(with: request) { data, response, error in
