@@ -44,4 +44,13 @@ struct WeatherModel {
             return "cloud"
         }
     }
+    
+    init(apiModel: WeatherResponse) {
+        conditionId = apiModel.weather[0].id
+        temperature = apiModel.main.temp
+        date = apiModel.dt
+        main = apiModel.weather[0].main
+        sunrise = apiModel.sys.sunrise
+        sunset = apiModel.sys.sunset
+    }
 }

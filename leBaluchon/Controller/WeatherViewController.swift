@@ -20,22 +20,22 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        weather(for: "Toulouse")
-        weather(for: "New York")
+        weather(city: "Toulouse")
+        weather(city: "New York")
     }
     
     //MARK: -Methods
-    private func weather(for city: String) {
-        WeatherService.shared.fetchJSON(city: city) {(success, weather) in
-            if success {
-                self.updateUI(for: city, weather: weather)
+    private func weather(city: String) {
+        WeatherService.shared.fetchJSON(city: city) {(error, weather) in
+            if let weather = weather {
+                self.updateUI(city: city, weather: weather)
             } else {
-                self.presentAlert(error: "Erreur de chargement")
+                self.presentAlert(error: error?.localizedDescription ?? "Erreur de chargement")
             }
         }
     }
     
-    private func updateUI(for city: String, weather: WeatherModel) {
+    private func updateUI(city: String, weather: WeatherModel) {
         if city == "Toulouse" {
             self.temperatureTo.text = "\(weather.temperatureString)°C"
             self.weatherLogoTo.image = UIImage(systemName: weather.conditionName)

@@ -10,7 +10,7 @@ import Foundation
 class CurrencyService {
     
     // MARK: - Properties
-    let errorCurrency = CurrencyModel(currencyData: ["Error": 0.0], timestamp: 0)
+//    let errorCurrency = CurrencyModel(currencyData: ["Error": 0.0], timestamp: 0)
     static var shared = CurrencyService()
     private init() {}
     
@@ -22,26 +22,26 @@ class CurrencyService {
     }
     
     // MARK: - Methods
-    func fetchJSON(callback: @escaping (Bool, CurrencyModel) -> Void) {
+    func fetchJSON(callback: @escaping (Error?, CurrencyModel?) -> Void) {
         let request = createCurrencyRequest()
         task?.cancel()
         task = session.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
-                    callback(false, self.errorCurrency)
+                    callback(error, nil)
                     return
                 }
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {callback(false, self.errorCurrency)
-                    return}
-                guard let responseJSON = try? JSONDecoder().decode(CurrencyResponse.self, from: data)  else {
-                    callback(false, self.errorCurrency)
+//                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {callback(false, self.errorCurrency)
+//                    return}
+                do {
+                let responseJSON = try JSONDecoder().decode(CurrencyResponse.self, from: data)
+                let currency = CurrencyModel(apiModel: responseJSON)
+                callback(nil, currency)
+                } catch {
+                    callback(error, nil)
                     return
                 }
-                let currencyData = responseJSON.rates
-                let timestamp = responseJSON.timestamp
-                let currency = CurrencyModel(currencyData: currencyData, timestamp: timestamp)
-                callback(true, currency)
-            }
+                }
         }
         task?.resume()
     }

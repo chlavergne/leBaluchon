@@ -29,8 +29,8 @@ class TranslateService {
                     callback(false, "Error")
                     return
                 }
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {callback(false, "Error")
-                    return}
+//                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {callback(false, "Error")
+//                    return}
                 guard let responseJSON = try? JSONDecoder().decode(TranslateResponse.self, from: data)  else {
                     callback(false, "Error")
                     return

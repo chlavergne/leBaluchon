@@ -27,12 +27,7 @@ class CurrencyViewController: UIViewController {
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
-        CurrencyService.shared.fetchJSON {(success, currency) in
-            if success {
-                self.useData(currency: currency)} else {
-                    self.presentAlert(error: "Erreur de chargement")
-                }
-        }
+        currency()
         textField.addTarget(self, action: #selector(updateViews), for: .editingChanged)
         textField.delegate = self
     }
@@ -53,6 +48,15 @@ class CurrencyViewController: UIViewController {
         if textField.text != "" {
             let total = amountText * activeCurrency
             priceLabel.text = String(format: "%.2f", total)
+        }
+    }
+    
+    private func currency() {
+        CurrencyService.shared.fetchJSON {(error, currency) in
+            if let currency = currency {
+                self.useData(currency: currency)} else {
+                    self.presentAlert(error: error?.localizedDescription ?? "Erreur de chargement")
+                }
         }
     }
     

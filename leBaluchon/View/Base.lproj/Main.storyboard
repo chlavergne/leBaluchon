@@ -761,20 +761,12 @@
                             <color key="backgroundColor" name="tabBarColor"/>
                             <color key="selectionIndicatorTintColor" name="selectedIconTabBar"/>
                         </tabBarAppearance>
-                        <tabBarAppearance key="scrollEdgeAppearance">
-                            <color key="selectionIndicatorTintColor" name="selectedIconTabBar"/>
-                        </tabBarAppearance>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
                                 <color key="value" name="unselectedIconTabBar"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="tintcolor">
-                            <color key="value" name="tabBarColor"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="RUZ-fQ-iPD" kind="relationship" relationship="viewControllers" id="eKM-XB-XjC"/>
                         <segue destination="ZCj-kT-6h7" kind="relationship" relationship="viewControllers" id="f1J-SY-ty0"/>

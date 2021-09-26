@@ -10,4 +10,9 @@ import Foundation
 struct CurrencyModel {
     let currencyData: [String: Double]
     let timestamp: Double
+    
+    init(apiModel: CurrencyResponse) {
+        currencyData = apiModel.rates
+        timestamp = apiModel.timestamp
+    }
 }

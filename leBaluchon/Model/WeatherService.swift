@@ -10,7 +10,6 @@ import Foundation
 class WeatherService {
     
     // MARK: - Properties
-    let errorWeather = WeatherModel(conditionId: 1, date: 0, temperature: 0, main: "Error", sunrise: 0, sunset: 0)
     static var shared = WeatherService()
     private init() {}
     
@@ -21,32 +20,27 @@ class WeatherService {
         self.session  = session
     }
     
-    
     // MARK: - Methods
-    func fetchJSON(city: String, callback: @escaping (Bool, WeatherModel) -> Void) {
+    func fetchJSON(city: String, callback: @escaping (Error?, WeatherModel?) -> Void) {
         let request = createWeatherRequest(city: city)
-        //        let session = URLSession(configuration: .default)
         task = session.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
-                    callback(false, self.errorWeather)
+                    callback(error, nil)
                     return
                 }
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {callback(false, self.errorWeather)
-                    return}
-                guard let responseJSON = try? JSONDecoder().decode(WeatherResponse.self, from: data)  else {
-                    callback(false, self.errorWeather)
-                    return
-                }
-                let id = responseJSON.weather[0].id
-                let temp = responseJSON.main.temp
-                let date = responseJSON.dt
-                let main = responseJSON.weather[0].main
-                let sunrise = responseJSON.sys.sunrise
-                let sunset = responseJSON.sys.sunset
+                //                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                //                    callback(nil, nil)
+                //                    return}
                 
-                let weather = WeatherModel(conditionId: id, date: date, temperature: temp, main: main, sunrise: sunrise, sunset: sunset)
-                callback(true, weather)
+                do {
+                    let responseJSON = try JSONDecoder().decode(WeatherResponse.self, from: data)
+                    let weather = WeatherModel(apiModel: responseJSON)
+                    callback(nil, weather)
+                } catch  {
+                    callback(error, nil)
+                    return
+                }
             }
         }
         task?.resume()
