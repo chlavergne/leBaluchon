@@ -12,7 +12,7 @@ class WeatherServiceTests: XCTestCase {
     
     // MARK: - Propertie
     let testText = "Un texte pour les tests"
-    
+
     // MARK: - WeatherService Tests
     func testWeatherServicefetchJSONShouldPostFailedCallbackError() {
         // Given
@@ -28,7 +28,7 @@ class WeatherServiceTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 0.01)
     }
-    
+//
     func testWeatherServicefetchJSONShouldPostFailedCallbackIfNoData() {
         // Given
         let WeatherService = WeatherService(
@@ -43,7 +43,7 @@ class WeatherServiceTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 0.01)
     }
-    
+
     func testWeatherServicefetchJSONShouldPostFailedCallbackIfIncorrectData() {
         // Given
         let WeatherService = WeatherService(
@@ -59,7 +59,7 @@ class WeatherServiceTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 0.01)
     }
-    
+
     func testWeatherServicefetchJSONShouldPostFailedCallbackIfCorrectData() {
         // Given
         let WeatherService = WeatherService(

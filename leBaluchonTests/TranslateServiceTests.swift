@@ -20,10 +20,10 @@ class TranslateServiceTests: XCTestCase {
             session: URLSessionFake(data: nil, response: nil, error: FakeTranslateResponseData.error))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        TranslateService.fetchJSON (text: testText) { success, translation in
+        TranslateService.fetchJSON (text: testText) { error, translation in
             //Then
-            XCTAssertNotNil(success)
-            XCTAssertEqual(translation, "Error")
+            XCTAssertNotNil(error)
+            XCTAssertNotNil(error?.localizedDescription)
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -35,10 +35,10 @@ class TranslateServiceTests: XCTestCase {
             session: URLSessionFake(data: nil, response: nil, error: nil))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        TranslateService.fetchJSON (text: testText) { success, translation in
+        TranslateService.fetchJSON (text: testText) { error, translation in
             //Then
-            XCTAssertNotNil(success)
-            XCTAssertEqual(translation, "Error")
+            XCTAssertNil(error)
+            XCTAssertNil(translation)
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -50,10 +50,11 @@ class TranslateServiceTests: XCTestCase {
             session: URLSessionFake(data: FakeTranslateResponseData.TranslateIncorrectData, response: FakeTranslateResponseData.responseOK, error: nil))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        TranslateService.fetchJSON (text: testText) { success, translation in
+        TranslateService.fetchJSON (text: testText) { error, translation in
             //Then
-            XCTAssertNotNil(success)
-            XCTAssertEqual(translation, "Error")
+            XCTAssertNotNil(error)
+            XCTAssertNil(translation)
+            XCTAssertEqual(error?.localizedDescription, "The data couldn’t be read because it isn’t in the correct format.")
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -65,9 +66,9 @@ class TranslateServiceTests: XCTestCase {
             session: URLSessionFake(data: FakeTranslateResponseData.TranslateCorrectData, response: FakeTranslateResponseData.responseOK, error: nil))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        TranslateService.fetchJSON (text: testText) { success, translation in
+        TranslateService.fetchJSON (text: testText) { error, translation in
             //Then
-            XCTAssertTrue(success)
+            XCTAssertNil(error)
             XCTAssertNotNil(translation)
             expectation.fulfill()
         }

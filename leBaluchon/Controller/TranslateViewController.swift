@@ -40,10 +40,12 @@ class TranslateViewController: UIViewController {
     // MARK: -Methods
     func translateText() {
         let textToTranslate = frenchText.text!
-        TranslateService.shared.fetchJSON(text: textToTranslate) {(success, translation) in
-            if success {self.englishText.text = translation} else {
-                print(translation)
-                self.presentAlert(error: "Erreur de chargement")
+        let session = URLSession(configuration: .default)
+        TranslateService(session: session).fetchJSON(text: textToTranslate) {(error, translation) in
+            if let translation = translation {
+                self.englishText.text = translation.translatedText
+            } else {
+                self.presentAlert(error: error?.localizedDescription ?? "Erreur de chargement")
             }
         }
     }

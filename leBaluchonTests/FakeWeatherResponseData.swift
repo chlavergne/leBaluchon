@@ -14,6 +14,7 @@ class FakeWeatherResponseData {
         let url = bundle.url(forResource: "Weather", withExtension: "json")!
         return try! Data(contentsOf: url)
     }
+    
     static let WeatherIncorrectData = "erreur".data(using: .utf8)!
     
     // MARK: - Response

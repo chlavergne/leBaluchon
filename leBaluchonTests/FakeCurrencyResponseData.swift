@@ -12,8 +12,7 @@ class FakeCurrencyResponseData {
     static var CurrencyCorrectData: Data? {
         let bundle = Bundle(for: FakeCurrencyResponseData.self)
         let url = bundle.url(forResource: "Devises", withExtension: "json")!
-        let data = try! Data(contentsOf: url)
-        return data
+        return try! Data(contentsOf: url)
     }
     
     static let CurrencyIncorrectData = "erreur".data(using: .utf8)!

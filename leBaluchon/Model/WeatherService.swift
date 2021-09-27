@@ -29,10 +29,6 @@ class WeatherService {
                     callback(error, nil)
                     return
                 }
-                //                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                //                    callback(nil, nil)
-                //                    return}
-                
                 do {
                     let responseJSON = try JSONDecoder().decode(WeatherResponse.self, from: data)
                     let weather = WeatherModel(apiModel: responseJSON)

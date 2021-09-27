@@ -52,7 +52,8 @@ class CurrencyViewController: UIViewController {
     }
     
     private func currency() {
-        CurrencyService.shared.fetchJSON {(error, currency) in
+        let session = URLSession(configuration: .default)
+        CurrencyService(session: session).fetchJSON {(error, currency) in
             if let currency = currency {
                 self.useData(currency: currency)} else {
                     self.presentAlert(error: error?.localizedDescription ?? "Erreur de chargement")
@@ -74,6 +75,7 @@ class CurrencyViewController: UIViewController {
         date.text = "Mise à jour le \(dateInitial)"
     }
     
+    /* Solution to turn a country code into a emoji flag found at https://stackoverflow.com/questions/30402435/swift-turn-a-country-code-into-a-emoji-flag-via-unicode */
     func getFlag(from countryCode: String) -> String {
         countryCode
             .unicodeScalars

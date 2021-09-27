@@ -10,10 +10,6 @@ import Foundation
 class TranslateService {
     
     // MARK: - Properties
-    static var shared = TranslateService()
-    private init() {}
-    
-    private var task: URLSessionDataTask?
     private var session = URLSession(configuration: .default)
     
     init(session: URLSession) {
@@ -21,26 +17,25 @@ class TranslateService {
     }
     
     // MARK: - Methods
-    func fetchJSON(text: String, callback: @escaping (Bool, String) -> Void) {
+    func fetchJSON(text: String, callback: @escaping (Error?, TranslateModel?) -> Void) {
         let request = createTranslateRequest(text: text)
-        task = session.dataTask(with: request) { data, response, error in
+        let task = session.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
-                    callback(false, "Error")
+                    callback(error, nil)
                     return
                 }
-//                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {callback(false, "Error")
-//                    return}
-                guard let responseJSON = try? JSONDecoder().decode(TranslateResponse.self, from: data)  else {
-                    callback(false, "Error")
+                do {
+                    let responseJSON = try JSONDecoder().decode(TranslateResponse.self, from: data)
+                    let translation = TranslateModel(apiModel: responseJSON)
+                    callback(nil, translation)
+                } catch  {
+                    callback(error, nil)
                     return
                 }
-        
-                let translation = responseJSON.data.translations[0].translatedText
-                callback(true, translation)
             }
         }
-        task?.resume()
+        task.resume()
     }
     
     private func createTranslateRequest(text: String) -> URLRequest {
