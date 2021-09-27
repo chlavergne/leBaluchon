@@ -36,6 +36,8 @@
 		D5D4C93326FCB0750037B3BC /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D4C93226FCB0750037B3BC /* CurrencyModel.swift */; };
 		D5D4C93526FCC7FE0037B3BC /* Weather.json in Resources */ = {isa = PBXBuildFile; fileRef = D5D4C93426FCC7FE0037B3BC /* Weather.json */; };
 		D5D4C93726FCC86E0037B3BC /* FakeWeatherResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D4C93626FCC86E0037B3BC /* FakeWeatherResponseData.swift */; };
+		D5E5F18A2701E4B00072C8F4 /* WeatherModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E5F1892701E4B00072C8F4 /* WeatherModelTests.swift */; };
+		D5E5F18C270214F20072C8F4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E5F18B270214F20072C8F4 /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		D5D4C93226FCB0750037B3BC /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		D5D4C93426FCC7FE0037B3BC /* Weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Weather.json; sourceTree = "<group>"; };
 		D5D4C93626FCC86E0037B3BC /* FakeWeatherResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeWeatherResponseData.swift; sourceTree = "<group>"; };
+		D5E5F1892701E4B00072C8F4 /* WeatherModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModelTests.swift; sourceTree = "<group>"; };
+		D5E5F18B270214F20072C8F4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,7 @@
 				D5AFFA8626E51C8E00A08505 /* CurrencyViewController.swift */,
 				D5AFFAC826F0964600A08505 /* WeatherViewController.swift */,
 				D5AFFAD226F32E2C00A08505 /* TranslateViewController.swift */,
+				D5E5F18B270214F20072C8F4 /* TabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -160,7 +165,6 @@
 				D5AFFA8826E61C4A00A08505 /* CurrencyResponse.swift */,
 				D5AFFAA426EA8E3400A08505 /* CurrencyService.swift */,
 				D5D4C93226FCB0750037B3BC /* CurrencyModel.swift */,
-				D5AFFAA626ED452B00A08505 /* CountryNames.swift */,
 				D5AFFACA26F097C300A08505 /* WeatherService.swift */,
 				D5AFFACC26F0C7D900A08505 /* WeatherResponse.swift */,
 				D5AFFACE26F0FA4400A08505 /* WeatherModel.swift */,
@@ -176,6 +180,7 @@
 			children = (
 				D5AFFA9026E791CC00A08505 /* TranslateServiceTests.swift */,
 				D57DB6F52700A9F100350226 /* WeatherServiceTests.swift */,
+				D5E5F1892701E4B00072C8F4 /* WeatherModelTests.swift */,
 				D57DB6F72700AC0E00350226 /* CurrencyServiceTests.swift */,
 				D5AFFAD926F88A8C00A08505 /* Translation.json */,
 				D5D4C93426FCC7FE0037B3BC /* Weather.json */,
@@ -193,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				D5AFFAD726F4B25300A08505 /* UIViewController+Additions.swift */,
+				D5AFFAA626ED452B00A08505 /* CountryNames.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 				D5AFFAA526EA8E3400A08505 /* CurrencyService.swift in Sources */,
 				D5AFFAA726ED452B00A08505 /* CountryNames.swift in Sources */,
 				D5AFFAD826F4B25300A08505 /* UIViewController+Additions.swift in Sources */,
+				D5E5F18C270214F20072C8F4 /* TabBarViewController.swift in Sources */,
 				D5AFFA7026E28CA600A08505 /* AppDelegate.swift in Sources */,
 				D5AFFAC926F0964600A08505 /* WeatherViewController.swift in Sources */,
 				D5AFFA8926E61C4A00A08505 /* CurrencyResponse.swift in Sources */,
@@ -329,6 +336,7 @@
 				D5AFFADE26F8BA8300A08505 /* URLSessionFake.swift in Sources */,
 				D5AFFA9B26E7BA2600A08505 /* FakeCurrencyResponseData.swift in Sources */,
 				D57DB6F82700AC0E00350226 /* CurrencyServiceTests.swift in Sources */,
+				D5E5F18A2701E4B00072C8F4 /* WeatherModelTests.swift in Sources */,
 				D5AFFADC26F88AE300A08505 /* FakeTranslateResponseData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -469,7 +477,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -486,7 +494,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = leBaluchon/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -505,7 +513,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = leBaluchon/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

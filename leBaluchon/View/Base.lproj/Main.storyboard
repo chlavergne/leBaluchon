@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JGs-yq-X7l">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,14 +14,14 @@
             <objects>
                 <viewController id="ZCj-kT-6h7" customClass="CurrencyViewController" customModule="leBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uQ8-5d-d6W" userLabel="deviseView">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundDayCurrency" translatesAutoresizingMaskIntoConstraints="NO" id="LQW-FU-cyl">
-                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </imageView>
-                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdY-qW-apN">
-                                <rect key="frame" x="100" y="306" width="211" height="50"/>
+                            <label userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdY-qW-apN">
+                                <rect key="frame" x="147.5" y="306" width="187.5" height="50"/>
                                 <color key="backgroundColor" name="texfieldBackground"/>
                                 <color key="tintColor" name="LogoMeteoColor"/>
                                 <constraints>
@@ -33,23 +32,19 @@
                                 <color key="highlightedColor" name="LogoMeteoColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qU-fP-BJq">
-                                <rect key="frame" x="321" y="166" width="54" height="50"/>
+                                <rect key="frame" x="345" y="166" width="54" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="c30-Jg-byi"/>
-                                    <constraint firstAttribute="width" constant="85" id="s2Z-Yt-KeQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="LogoMeteoColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="26"/>
-                                    <mask key="constraints">
-                                        <exclude reference="s2Z-Yt-KeQ"/>
-                                    </mask>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNK-Vx-Omh" userLabel="date">
-                                <rect key="frame" x="20" y="729.66666666666663" width="350" height="21.333333333333371"/>
+                                <rect key="frame" x="20" y="781.5" width="374" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="tabBarColor"/>
                                 <color key="highlightedColor" systemColor="labelColor"/>
@@ -58,17 +53,16 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7B-8U-knD">
-                                <rect key="frame" x="15" y="306" width="85" height="50"/>
+                                <rect key="frame" x="15" y="306" width="132.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="hcw-bf-fwm"/>
-                                    <constraint firstAttribute="width" constant="85" id="ztR-E8-XgZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="80"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Montant en Euro" textAlignment="right" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gqt-Xe-h9Q">
-                                <rect key="frame" x="100" y="166" width="211" height="50"/>
+                                <rect key="frame" x="100" y="166" width="235" height="50"/>
                                 <color key="backgroundColor" name="texfieldBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="UB9-yE-JI5"/>
@@ -81,7 +75,7 @@
                                 </connections>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dvx-Kt-k8g">
-                                <rect key="frame" x="305" y="223" width="85" height="216"/>
+                                <rect key="frame" x="329" y="223" width="85" height="216"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="texfieldBackground"/>
                                 <constraints>
@@ -94,29 +88,21 @@
                                 </userDefinedRuntimeAttributes>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZN-NL-mNM">
-                                <rect key="frame" x="20" y="366" width="300" height="30"/>
+                                <rect key="frame" x="20" y="366" width="64.5" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="7IL-T1-Vci">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="180"/>
-                                    </constraint>
                                     <constraint firstAttribute="height" constant="30" id="Jdt-zh-ckj"/>
-                                    <constraint firstAttribute="width" constant="300" id="dUg-3f-eOv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" name="LogoMeteoColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="7IL-T1-Vci"/>
                                         <exclude reference="Jdt-zh-ckj"/>
-                                        <exclude reference="dUg-3f-eOv"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <exclude reference="7IL-T1-Vci"/>
                                         <include reference="Jdt-zh-ckj"/>
-                                        <include reference="dUg-3f-eOv"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -143,6 +129,7 @@
                             <constraint firstItem="Dvx-Kt-k8g" firstAttribute="centerY" secondItem="uQ8-5d-d6W" secondAttribute="centerY" id="9Dx-l8-sLs">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-116"/>
                             </constraint>
+                            <constraint firstItem="Dvx-Kt-k8g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BZN-NL-mNM" secondAttribute="trailing" constant="8" symbolic="YES" id="CHH-Q4-e0k"/>
                             <constraint firstItem="LDf-r5-awx" firstAttribute="trailing" secondItem="Dvx-Kt-k8g" secondAttribute="trailing" constant="15" id="Dtl-JA-aXy"/>
                             <constraint firstItem="p7B-8U-knD" firstAttribute="top" secondItem="std-qP-kZz" secondAttribute="bottom" constant="70" id="FDK-HL-6eO">
                                 <variation key="heightClass=regular-widthClass=compact" constant="90"/>
@@ -196,11 +183,6 @@
                                 <exclude reference="BZN-NL-mNM"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="fKK-OX-6Ax"/>
-                                <exclude reference="r5H-qj-50F"/>
-                                <exclude reference="rte-yr-ai4"/>
-                                <exclude reference="wXN-ab-sD1"/>
-                                <exclude reference="xg3-Zh-ztz"/>
                                 <exclude reference="8He-Bg-crb"/>
                                 <exclude reference="fUY-JA-W3g"/>
                                 <exclude reference="guN-Ff-Lm8"/>
@@ -209,6 +191,11 @@
                                 <exclude reference="Sjy-lv-fpu"/>
                                 <exclude reference="lgn-sO-jOZ"/>
                                 <exclude reference="uXW-7B-brC"/>
+                                <exclude reference="fKK-OX-6Ax"/>
+                                <exclude reference="r5H-qj-50F"/>
+                                <exclude reference="rte-yr-ai4"/>
+                                <exclude reference="wXN-ab-sD1"/>
+                                <exclude reference="xg3-Zh-ztz"/>
                                 <exclude reference="RDz-Sq-6F1"/>
                                 <exclude reference="UJ3-Mq-B18"/>
                                 <exclude reference="gn7-1V-8wh"/>
@@ -219,11 +206,6 @@
                                 <include reference="BZN-NL-mNM"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="fKK-OX-6Ax"/>
-                                <exclude reference="r5H-qj-50F"/>
-                                <exclude reference="rte-yr-ai4"/>
-                                <include reference="wXN-ab-sD1"/>
-                                <exclude reference="xg3-Zh-ztz"/>
                                 <exclude reference="Dtl-JA-aXy"/>
                                 <include reference="8He-Bg-crb"/>
                                 <include reference="fUY-JA-W3g"/>
@@ -237,6 +219,11 @@
                                 <exclude reference="Z0R-Fe-2y2"/>
                                 <include reference="lgn-sO-jOZ"/>
                                 <exclude reference="uXW-7B-brC"/>
+                                <include reference="fKK-OX-6Ax"/>
+                                <exclude reference="r5H-qj-50F"/>
+                                <exclude reference="rte-yr-ai4"/>
+                                <include reference="wXN-ab-sD1"/>
+                                <exclude reference="xg3-Zh-ztz"/>
                                 <exclude reference="9Dx-l8-sLs"/>
                                 <include reference="RDz-Sq-6F1"/>
                                 <include reference="UJ3-Mq-B18"/>
@@ -271,15 +258,15 @@
             <objects>
                 <viewController id="7Cv-j1-Pne" customClass="TranslateViewController" customModule="leBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oEU-ae-XwJ" userLabel="TranslatorView">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundDayTranslator" translatesAutoresizingMaskIntoConstraints="NO" id="97z-mS-J6b">
-                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xee-rw-1h4">
-                                <rect key="frame" x="20" y="94" width="350" height="200"/>
+                                <rect key="frame" x="20" y="94" width="374" height="200"/>
                                 <color key="backgroundColor" name="texfieldBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="BUQ-D9-MxF"/>
@@ -299,7 +286,7 @@
                                 </variation>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2U-eJ-9Im">
-                                <rect key="frame" x="20" y="384" width="350" height="200"/>
+                                <rect key="frame" x="20" y="384" width="374" height="200"/>
                                 <color key="backgroundColor" name="texfieldBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="rhx-vu-10q"/>
@@ -320,7 +307,7 @@
                                 </variation>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFb-71-BTX">
-                                <rect key="frame" x="340" y="94" width="30" height="30"/>
+                                <rect key="frame" x="364" y="94" width="30" height="30"/>
                                 <color key="backgroundColor" name="texfieldBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="auR-Fc-g8o"/>
@@ -347,13 +334,13 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tapez un texte à traduire (Français)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bhI-ua-1fB">
-                                <rect key="frame" x="50.666666666666657" y="183.66666666666666" width="289" height="21"/>
+                                <rect key="frame" x="62.5" y="183.5" width="289" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Traduction (Anglais)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LIl-tl-ln2">
-                                <rect key="frame" x="114.33333333333333" y="473.66666666666669" width="161.33333333333337" height="21"/>
+                                <rect key="frame" x="126.5" y="473.5" width="161" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -462,15 +449,15 @@
             <objects>
                 <viewController id="RUZ-fQ-iPD" customClass="WeatherViewController" customModule="leBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b7g-mJ-0Y2">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundWeather" translatesAutoresizingMaskIntoConstraints="NO" id="FUu-ai-A1r">
-                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" name="Color"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21°C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itg-RS-Hc6" userLabel="temperatureLabelNy">
-                                <rect key="frame" x="20" y="179" width="107" height="48.666666666666657"/>
+                                <rect key="frame" x="20" y="179" width="107" height="48.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -481,7 +468,7 @@
                                 </variation>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vRB-6n-pka" userLabel="conditionImageViewNy">
-                                <rect key="frame" x="20" y="71.333333333333329" width="110" height="105"/>
+                                <rect key="frame" x="20" y="70.5" width="110" height="105.5"/>
                                 <color key="tintColor" name="LogoMeteoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="WH1-Mw-tjb">
@@ -505,7 +492,7 @@
                                 </variation>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.sun" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PdW-Pi-ruV" userLabel="conditionImageViewTo">
-                                <rect key="frame" x="260" y="235.66666666666666" width="110.66666666666669" height="108.66666666666669"/>
+                                <rect key="frame" x="284" y="235.5" width="111" height="109"/>
                                 <color key="tintColor" name="LogoMeteoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="AV4-1q-BaM"/>
@@ -534,7 +521,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloudy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxU-5h-qGp" userLabel="Weather ConditionTo">
-                                <rect key="frame" x="146" y="294.66666666666669" width="72" height="26"/>
+                                <rect key="frame" x="170" y="294.5" width="72" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="LogoMeteoColor"/>
                                 <nil key="highlightedColor"/>
@@ -543,7 +530,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toulouse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGh-4Q-svT">
-                                <rect key="frame" x="146" y="262.66666666666669" width="114" height="32"/>
+                                <rect key="frame" x="170" y="262.5" width="114" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="LogoMeteoColor"/>
                                 <nil key="highlightedColor"/>
@@ -552,7 +539,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scM-Sm-TTG" userLabel="Weather ConditionNy">
-                                <rect key="frame" x="130" y="116" width="66.666666666666686" height="26"/>
+                                <rect key="frame" x="130" y="116" width="66.5" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="LogoMeteoColor"/>
                                 <nil key="highlightedColor"/>
@@ -561,7 +548,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ans-Jq-Tb4" userLabel="temperatureLabelTo">
-                                <rect key="frame" x="263" y="346" width="107" height="48.666666666666686"/>
+                                <rect key="frame" x="287" y="346" width="107" height="48.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -578,7 +565,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2j-cZ-9C5" userLabel="date">
-                                <rect key="frame" x="20" y="729.66666666666663" width="350" height="21.333333333333371"/>
+                                <rect key="frame" x="20" y="781.5" width="374" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="tabBarColor"/>
                                 <color key="highlightedColor" systemColor="labelColor"/>
@@ -747,27 +734,19 @@
             </objects>
             <point key="canvasLocation" x="553.62318840579712" y="-906.02678571428567"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="fTW-2D-d2F">
             <objects>
-                <tabBarController id="JGs-yq-X7l" sceneMemberID="viewController">
+                <tabBarController id="JGs-yq-X7l" customClass="TabBarViewController" customModule="leBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="blf-5x-JHM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="tabBarColor"/>
-                        <color key="barTintColor" name="tabBarColor"/>
                         <color key="selectedImageTintColor" name="selectedIconTabBar"/>
-                        <tabBarAppearance key="standardAppearance">
-                            <color key="backgroundColor" name="tabBarColor"/>
-                            <color key="selectionIndicatorTintColor" name="selectedIconTabBar"/>
-                        </tabBarAppearance>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
-                                <color key="value" name="unselectedIconTabBar"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
+                        <tabBarAppearance key="standardAppearance"/>
                     </tabBar>
                     <connections>
+                        <outlet property="appTabBar" destination="blf-5x-JHM" id="pza-c4-56x"/>
                         <segue destination="RUZ-fQ-iPD" kind="relationship" relationship="viewControllers" id="eKM-XB-XjC"/>
                         <segue destination="ZCj-kT-6h7" kind="relationship" relationship="viewControllers" id="f1J-SY-ty0"/>
                         <segue destination="7Cv-j1-Pne" kind="relationship" relationship="viewControllers" id="m4y-fw-c7L"/>
@@ -782,13 +761,13 @@
         <image name="backgroundDayCurrency" width="250" height="500"/>
         <image name="backgroundDayTranslator" width="250" height="500"/>
         <image name="backgroundWeather" width="250" height="500"/>
-        <image name="change" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="change" width="25" height="25"/>
         <image name="cloud" catalog="system" width="128" height="88"/>
         <image name="cloud.sun" catalog="system" width="128" height="95"/>
         <image name="european-union" width="511" height="335"/>
         <image name="multiply.circle" catalog="system" width="128" height="121"/>
-        <image name="translate" width="33.333332061767578" height="33.333332061767578"/>
-        <image name="weathericon" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="translate" width="25" height="25"/>
+        <image name="weathericon" width="25" height="25"/>
         <namedColor name="Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -803,9 +782,6 @@
         </namedColor>
         <namedColor name="texfieldBackground">
             <color red="0.75800001621246338" green="0.93599998950958252" blue="0.91200000047683716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="unselectedIconTabBar">
-            <color red="0.052000001072883606" green="0.31700000166893005" blue="0.27700001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
