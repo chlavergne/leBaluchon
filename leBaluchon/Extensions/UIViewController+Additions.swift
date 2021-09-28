@@ -24,6 +24,12 @@ extension CurrencyViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text == "" {
+            priceLabel.text = "0.0"
+        }
+    }
 }
 
 extension CurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource {

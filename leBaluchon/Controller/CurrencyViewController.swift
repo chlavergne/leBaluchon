@@ -48,7 +48,7 @@ class CurrencyViewController: UIViewController {
         if textField.text != "" {
             let total = amountText * activeCurrency
             priceLabel.text = String(format: "%.2f", total)
-        }
+        } 
     }
     
     private func currency() {

@@ -26,7 +26,8 @@ class WeatherViewController: UIViewController {
     
     //MARK: -Methods
     private func weather(city: String) {
-        WeatherService.shared.fetchJSON(city: city) {(error, weather) in
+        let session = URLSession(configuration: .default)
+        WeatherService(session: session).fetchJSON(city: city) {(error, weather) in
             if let weather = weather {
                 self.updateUI(city: city, weather: weather)
             } else {

@@ -12,12 +12,13 @@ class WeatherModel: XCTestCase {
     
     // MARK: - Propertie
     let testText = "Un texte pour les tests"
-
+    
     
     func testWeatherModelconditionNameShouldreturnsunMax() {
         // Given
         let WeatherService = WeatherService(
             session: URLSessionFake(data: FakeWeatherResponseData.WeatherCorrectData, response: FakeWeatherResponseData.responseOK, error: nil))
+        
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
         WeatherService.fetchJSON (city: testText) { error, weather in
@@ -27,4 +28,21 @@ class WeatherModel: XCTestCase {
         }
         wait(for: [expectation], timeout: 0.01)
     }
+    
+    func testWeatherModeltemperatureStringShouldreturnOneDecimale() {
+        // Given
+        let WeatherService = WeatherService(
+            session: URLSessionFake(data: FakeWeatherResponseData.WeatherCorrectData, response: FakeWeatherResponseData.responseOK, error: nil))
+        
+        // When
+        let expectation = XCTestExpectation(description: "Wait for queue change")
+        WeatherService.fetchJSON (city: testText) { error, weather in
+            //Then
+            XCTAssertEqual(weather?.temperatureString, "23.4")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.01)
+    }
 }
+
+
