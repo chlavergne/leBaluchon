@@ -13,42 +13,43 @@ class CurrencyServiceTests: XCTestCase {
     // MARK: - CurrencyService Tests
     func testCurrencyServicefetchJSONShouldPostFailedCallbackError() {
         // Given
-        let CurrencyService = CurrencyService(
+        let currencyService = CurrencyService(
             session: URLSessionFake(data: nil, response: nil, error: FakeCurrencyResponseData.error))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        CurrencyService.fetchJSON { error, currency in
-            //Then
+        currencyService.fetchJSON { error, _ in
+            // Then
             XCTAssertNotNil(error)
             XCTAssertNotNil(error?.localizedDescription)
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
     }
-    
+
     func testCurrencyServicefetchJSONShouldPostFailedCallbackIfNoData() {
         // Given
-        let CurrencyService = CurrencyService(
+        let currencyService = CurrencyService(
             session: URLSessionFake(data: nil, response: nil, error: nil))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        CurrencyService.fetchJSON { error, currency in
-            //Then
+        currencyService.fetchJSON { error, currency in
+            // Then
             XCTAssertNil(error)
             XCTAssertNil(currency)
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
     }
-    
+
     func testCurrencyServicefetchJSONShouldPostFailedCallbackIfIncorrectData() {
         // Given
-        let CurrencyService = CurrencyService(
-            session: URLSessionFake(data: FakeCurrencyResponseData.CurrencyIncorrectData, response: FakeCurrencyResponseData.responseOK, error: nil))
+        let currencyService = CurrencyService(
+            session: URLSessionFake(data: FakeCurrencyResponseData.CurrencyIncorrectData,
+                                    response: FakeCurrencyResponseData.responseOK, error: nil))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        CurrencyService.fetchJSON { error, currency in
-            //Then
+        currencyService.fetchJSON { error, currency in
+            // Then
             XCTAssertNotNil(error)
             XCTAssertNil(currency)
             XCTAssertEqual(error?.localizedDescription, "The data couldn’t be read because it isn’t in the correct format.")
@@ -56,14 +57,15 @@ class CurrencyServiceTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 0.01)
     }
-    
+
     func testCurrencyServicefetchJSONShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
-        let CurrencyService = CurrencyService(
-            session: URLSessionFake(data: FakeCurrencyResponseData.CurrencyCorrectData, response: FakeCurrencyResponseData.responseOK, error: nil))
+        let currencyService = CurrencyService(
+            session: URLSessionFake(data: FakeCurrencyResponseData.CurrencyCorrectData,
+                                    response: FakeCurrencyResponseData.responseOK, error: nil))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        CurrencyService.fetchJSON { error, currency in
-            //Then
+        currencyService.fetchJSON { error, currency in
+            // Then
             XCTAssertNil(error)
             XCTAssertNotNil(currency)
             expectation.fulfill()

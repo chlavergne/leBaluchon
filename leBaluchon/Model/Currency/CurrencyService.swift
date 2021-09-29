@@ -8,14 +8,14 @@
 import Foundation
 
 class CurrencyService {
-    
+
     // MARK: - Properties
     private var session = URLSession(configuration: .default)
-    
+
     init(session: URLSession) {
         self.session  = session
     }
-    
+
     // MARK: - Methods
     func fetchJSON(callback: @escaping (Error?, CurrencyModel?) -> Void) {
         let request = createCurrencyRequest()
@@ -37,10 +37,10 @@ class CurrencyService {
         }
         task.resume()
     }
-    
+
     private func createCurrencyRequest() -> URLRequest {
         var urlConponents = URLComponents(string: "http://data.fixer.io/api/latest")!
-        urlConponents.queryItems = [URLQueryItem(name: "access_key", value: "ab5d919e80c01ffa58db756efb99fe9f"),
+        urlConponents.queryItems = [URLQueryItem(name: "access_key", value: ApiKeys.currencyKey),
                                     URLQueryItem(name: "symbols", value: "AED, ARS, BOB, BRL, CHE, ZAR, USD, MXN, QAR")]
         var request = URLRequest(url: urlConponents.url!)
         request.httpMethod = "GET"

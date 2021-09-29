@@ -19,12 +19,12 @@ extension UIViewController {
 
 // MARK: - Extensions CurrencyViewController
 extension CurrencyViewController: UITextFieldDelegate {
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.text == "" {
             priceLabel.text = "0.0"
@@ -33,19 +33,19 @@ extension CurrencyViewController: UITextFieldDelegate {
 }
 
 extension CurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return currencyCode.count
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return currencyCode[row]
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         activeCurrency = values[row]
         activeCode = currencyCode[pickerView.selectedRow(inComponent: 0)]
@@ -59,19 +59,19 @@ extension CurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
 // MARK: - Extension TranslateViewController
 extension TranslateViewController: UITextViewDelegate {
-    
+
     func textViewDidEndEditing(_ textView: UITextView) {
         englishPlaceholder.placeholder = ""
         translateText()
-        
+
     }
     func textViewDidBeginEditing(_ textView: UITextView) {
         frenchPlaceholder.placeholder = ""
-        
+
     }
-    
+
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if(text == "\n") {
+        if text == "\n" {
             textView.resignFirstResponder()
             return true
         }

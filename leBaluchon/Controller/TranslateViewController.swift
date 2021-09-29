@@ -8,19 +8,18 @@
 import UIKit
 
 class TranslateViewController: UIViewController {
-    
+
     // MARK: - IBOutlets
     @IBOutlet var frenchText: UITextView!
     @IBOutlet var englishText: UITextView!
     @IBOutlet var englishPlaceholder: UITextField!
     @IBOutlet var frenchPlaceholder: UITextField!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         frenchText.delegate = self
     }
-    
+
     // MARK: - IBActions
     @IBAction func dismissKeyboard(_ sender: Any) {
         frenchText.resignFirstResponder()
@@ -29,15 +28,15 @@ class TranslateViewController: UIViewController {
             frenchPlaceholder.placeholder = "Tapez un texte à traduire (Français)"
         }
     }
-    
+
     @IBAction func clearText(_ sender: Any) {
         frenchText.text = ""
         englishText.text = ""
         englishPlaceholder.placeholder = "Traduction (Anglais)"
         frenchPlaceholder.placeholder = "Tapez un texte à traduire (Français)"
     }
-    
-    // MARK: -Methods
+
+    // MARK: - Methods
     func translateText() {
         let textToTranslate = frenchText.text!
         let session = URLSession(configuration: .default)
@@ -50,4 +49,3 @@ class TranslateViewController: UIViewController {
         }
     }
 }
-

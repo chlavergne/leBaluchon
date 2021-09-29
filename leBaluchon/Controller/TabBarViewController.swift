@@ -9,7 +9,9 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
+    // MARK: - IBOutlet
     @IBOutlet weak var appTabBar: UITabBar!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let appearance = appTabBar.standardAppearance

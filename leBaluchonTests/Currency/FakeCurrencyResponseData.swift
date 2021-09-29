@@ -14,20 +14,19 @@ class FakeCurrencyResponseData {
         let url = bundle.url(forResource: "Devises", withExtension: "json")!
         return try! Data(contentsOf: url)
     }
-    
+
     static let CurrencyIncorrectData = "erreur".data(using: .utf8)!
-    
+
     // MARK: - Response
     static let responseOK = HTTPURLResponse(
         url: URL(string: "https://fixer.io")!,
         statusCode: 200, httpVersion: nil, headerFields: [:])!
-    
+
     static let responseKO = HTTPURLResponse(
         url: URL(string: "https://fixer.io")!,
         statusCode: 500, httpVersion: nil, headerFields: [:])!
-    
+
     // MARK: - Error
     class DevisesError: Error {}
     static let error = DevisesError()
 }
-
