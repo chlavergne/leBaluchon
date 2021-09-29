@@ -8,8 +8,8 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
-    
-    // MARK: -IBOutlets
+
+    // MARK: - IBOutlets
     @IBOutlet var weatherLogoNy: UIImageView!
     @IBOutlet var weatherLogoTo: UIImageView!
     @IBOutlet var temperatureNy: UILabel!
@@ -17,14 +17,14 @@ class WeatherViewController: UIViewController {
     @IBOutlet var weatherConditionNy: UILabel!
     @IBOutlet var weatherConditionTo: UILabel!
     @IBOutlet var date: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         weather(city: "Toulouse")
         weather(city: "New York")
     }
-    
-    //MARK: -Methods
+
+    // MARK: - Methods
     private func weather(city: String) {
         let session = URLSession(configuration: .default)
         WeatherService(session: session).fetchJSON(city: city) {(error, weather) in
@@ -35,7 +35,7 @@ class WeatherViewController: UIViewController {
             }
         }
     }
-    
+
     private func updateUI(city: String, weather: WeatherModel) {
         if city == "Toulouse" {
             self.temperatureTo.text = "\(weather.temperatureString)°C"
@@ -50,4 +50,3 @@ class WeatherViewController: UIViewController {
         self.date.text = "Mise à jour le \(dateInitial)"
     }
 }
-

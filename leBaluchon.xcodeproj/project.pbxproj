@@ -38,6 +38,7 @@
 		D5D4C93726FCC86E0037B3BC /* FakeWeatherResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D4C93626FCC86E0037B3BC /* FakeWeatherResponseData.swift */; };
 		D5E5F18A2701E4B00072C8F4 /* WeatherModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E5F1892701E4B00072C8F4 /* WeatherModelTests.swift */; };
 		D5E5F18C270214F20072C8F4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E5F18B270214F20072C8F4 /* TabBarViewController.swift */; };
+		D5E5F19927047DF20072C8F4 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E5F19827047DF20072C8F4 /* ApiKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		D5D4C93626FCC86E0037B3BC /* FakeWeatherResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeWeatherResponseData.swift; sourceTree = "<group>"; };
 		D5E5F1892701E4B00072C8F4 /* WeatherModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModelTests.swift; sourceTree = "<group>"; };
 		D5E5F18B270214F20072C8F4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		D5E5F19827047DF20072C8F4 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			children = (
 				D5AFFAD726F4B25300A08505 /* UIViewController+Additions.swift */,
 				D5AFFAA626ED452B00A08505 /* CountryNames.swift */,
+				D5E5F19827047DF20072C8F4 /* ApiKeys.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 			files = (
 				D5AFFAD126F32DE900A08505 /* TranslateService.swift in Sources */,
 				D5AFFAD526F363E600A08505 /* TranslateResponse.swift in Sources */,
+				D5E5F19927047DF20072C8F4 /* ApiKeys.swift in Sources */,
 				D5AFFA8726E51C8E00A08505 /* CurrencyViewController.swift in Sources */,
 				D5AFFACD26F0C7D900A08505 /* WeatherResponse.swift in Sources */,
 				D5AFFACB26F097C300A08505 /* WeatherService.swift in Sources */,

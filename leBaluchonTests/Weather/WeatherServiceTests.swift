@@ -9,19 +9,19 @@ import XCTest
 @testable import leBaluchon
 
 class WeatherServiceTests: XCTestCase {
-    
+
     // MARK: - Propertie
     let testText = "Un texte pour les tests"
 
     // MARK: - WeatherService Tests
     func testWeatherServicefetchJSONShouldPostFailedCallbackError() {
         // Given
-        let WeatherService = WeatherService(
+        let weatherService = WeatherService(
             session: URLSessionFake(data: nil, response: nil, error: FakeWeatherResponseData.error))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        WeatherService.fetchJSON (city: testText) { error, weather in
-            //Then
+        weatherService.fetchJSON(city: testText) { error, _ in
+            // Then
             XCTAssertNotNil(error)
             XCTAssertNotNil(error?.localizedDescription)
             expectation.fulfill()
@@ -31,12 +31,12 @@ class WeatherServiceTests: XCTestCase {
 //
     func testWeatherServicefetchJSONShouldPostFailedCallbackIfNoData() {
         // Given
-        let WeatherService = WeatherService(
+        let weatherService = WeatherService(
             session: URLSessionFake(data: nil, response: nil, error: nil))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        WeatherService.fetchJSON (city: testText) { error, weather in
-            //Then
+        weatherService.fetchJSON(city: testText) { error, weather in
+            // Then
             XCTAssertNil(error)
             XCTAssertNil(weather)
             expectation.fulfill()
@@ -46,12 +46,13 @@ class WeatherServiceTests: XCTestCase {
 
     func testWeatherServicefetchJSONShouldPostFailedCallbackIfIncorrectData() {
         // Given
-        let WeatherService = WeatherService(
-            session: URLSessionFake(data: FakeWeatherResponseData.WeatherIncorrectData, response: FakeWeatherResponseData.responseOK, error: nil))
+        let weatherService = WeatherService(
+            session: URLSessionFake(data: FakeWeatherResponseData.WeatherIncorrectData,
+                                    response: FakeWeatherResponseData.responseOK, error: nil))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        WeatherService.fetchJSON (city: testText) { error, weather in
-            //Then
+        weatherService.fetchJSON(city: testText) { error, weather in
+            // Then
             XCTAssertNotNil(error)
             XCTAssertNil(weather)
             XCTAssertEqual(error?.localizedDescription, "The data couldn’t be read because it isn’t in the correct format.")
@@ -62,12 +63,13 @@ class WeatherServiceTests: XCTestCase {
 
     func testWeatherServicefetchJSONShouldPostFailedCallbackIfCorrectData() {
         // Given
-        let WeatherService = WeatherService(
-            session: URLSessionFake(data: FakeWeatherResponseData.WeatherCorrectData, response: FakeWeatherResponseData.responseOK, error: nil))
+        let weatherService = WeatherService(
+            session: URLSessionFake(data: FakeWeatherResponseData.WeatherCorrectData,
+                                    response: FakeWeatherResponseData.responseOK, error: nil))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        WeatherService.fetchJSON (city: testText) { error, weather in
-            //Then
+        weatherService.fetchJSON(city: testText) { error, weather in
+            // Then
             XCTAssertNil(error)
             XCTAssertNotNil(weather)
             expectation.fulfill()
